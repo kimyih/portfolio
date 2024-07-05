@@ -201,8 +201,7 @@
 }
 
 .second_section {
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .second_container {
@@ -212,7 +211,7 @@
 .projectimg_1 img,
 .projectimg_2 img,
 .projectimg_3 img {
-  width: 31.927vw;
+  width: 30vw;
   padding: 0.5vw;
   margin-top: 2vw;
   height: 100vh;
@@ -229,6 +228,103 @@
 
 .project1_codepin_wrap {
   display: flex;
+
+  .projecn1_left_wrap {
+    width: 50%;
+    height: 100vh;
+
+    .project1_title {
+      width: 100%;
+      margin-top: 28px;
+
+      .pr1_codepin {
+        font-size: 10vw;
+        font-family: "SF Pro Display";
+        font-weight: 30;
+        line-height: 86%;
+      }
+
+      .pr1_project {
+        font-size: 10vw;
+        font-family: "SF Pro Display";
+        font-weight: 30;
+        line-height: 94%;
+      }
+    }
+
+    .project1_line_wrap {
+      width: 100%;
+      margin-top: 2.3vw;
+
+      .project1_line {
+        width: 34vw;
+        height: 1px;
+        background-color: #000;
+      }
+
+      .project1_line_info {
+        width: 34vw;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6px;
+
+        .pj_line_title {
+          font-size: 18px;
+          font-family: "Roboto";
+          font-weight: normal;
+          letter-spacing: -0.36px;
+          line-height: 22px;
+          text-transform: uppercase;
+        }
+
+        .pj_line_arrow img {
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  /* //projecn1_left_wrap */
+
+  .project1_right_wrap {
+    width: 18vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .pj1_skill {
+    display: flex;
+    flex-direction: column;
+
+    .pj1_skill_title {
+      font-size: 18px;
+      color: #000;
+      line-height: 22px;
+      letter-spacing: -0.36px;
+      text-align: right;
+    }
+
+    .pj1_skill_desc1,
+    .pj1_skill_desc2,
+    .pj1_skill_desc3 {
+      opacity: 0.4;
+      text-align: right;
+      letter-spacing: -2%;
+    }
+  }
+
+  .projecn1_img_slider {
+    width: 30vw;
+    height: 100vh;
+  }
+  .projecn1_img_slider img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    padding: 0.5vw;
+  }
 }
 
 /* 반응형 */
