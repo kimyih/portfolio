@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wrap {
+  width: 100%;
+  background-color: #e7e4df;
+}
+
+#header {
+  background-color: #e7e4df;
+  font-size: 16px;
+  display: none; /* 처음에는 숨김 */
+  justify-content: space-between;
+  height: 44px;
+  position: fixed; /* 고정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0; /* 투명도 초기값 */
+  z-index: 1000; /* 다른 요소보다 위에 위치 */
+  transition: opacity 0.2s, transform 0.2s; /* 애니메이션 추가 */
+}
+
+#header > ul {
+  list-style: none;
+  display: flex;
+  margin: 20px;
+  padding: 0;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  border-bottom: 1px solid #000;
+}
+
+#header > ul > li {
+  display: inline;
+}
+
+#header > ul > li > a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.wrap_container {
+  padding: 0 20px 20px 20px;
+}
+
+.first_animation {
+  display: flex;
+  height: 36vw; /* 높이를 vw 단위로 설정 */
+}
+
+/* 각 anibox 설정, 전체 너비 대비 비율로 너비 설정 */
+.anibox1,
+.anibox2,
+.anibox3,
+.anibox5,
+.anibox6,
+.anibox7 {
+  height: 36vw; /* 높이를 vw 단위로 설정 */
+  background-color: #000000;
+  flex-grow: 1; /* flex 사용하여 자동으로 너비 조절 */
+}
+
+.anibox4 {
+  height: 36vw;
+  background-color: #000000;
+  transform: rotate(31.9deg);
+  flex-grow: 1;
+  background-image: url("../img/ani_bg.png");
+}
+
+/* 마진 설정, 비율로 조정 */
+.anibox1 {
+  margin-left: 3.125vw;
+  margin-right: 0.729vw;
+}
+
+.anibox2 {
+  margin-right: 8.333vw;
+}
+
+.anibox3 {
+  background-image: url("../img/ani_bg.png");
+}
+
+.anibox5 {
+  background-image: url("../img/ani_bg.png");
+}
+
+.anibox6 {
+  margin-left: 8.333vw;
+}
+
+.anibox7 {
+  margin-right: 3.125vw;
+  margin-left: 0.729vw;
+}
+
+.first_section {
+  max-width: 1920px;
+  background-color: #e7e4df;
+}
+
+.first_top_wrap {
+}
+
+.first_top_line1 {
+  width: 100%;
+  height: 50px;
+  background-color: #e7e4df;
+}
+
+.first_top_line2 {
+  width: 100%;
+  height: 75px;
+  background-color: #000000;
+  padding: 20px 0px;
+}
+
+.first_bottom_wrap {
+}
+
+.nav {
+  background-color: #e7e4df;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  position: relative;
+  border-bottom: 1px solid #000000;
+}
+
+.nav > ul {
+  position: absolute;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  bottom: 0;
+}
+
+.nav > ul > li {
+  display: inline;
+}
+
+.nav > ul > li > a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.bottom_wrap {
+  display: flex;
+  height: 992px;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.bottom_line1 {
+  width: 479px;
+  height: 992px;
+  border-right: 1px solid #000000;
+}
+
+.bottom_line2 {
+  width: 297px;
+  height: 992px;
+  border-right: 1px solid #000000;
+}
+
+.bottom_line3 {
+  width: 473px;
+  height: 992px;
+  border-right: 1px solid #000000;
+}
+
+.bottom_line4 {
+  width: 628px;
+  height: 992px;
+}
+
+.introduction {
+  position: absolute;
+  font-size: 5.6vw;
+  font-weight: bold;
+  line-height: 86%;
+  text-align: justify; /* Not supported by the browser. */
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  z-index: 2;
+  font-family: "San Francisco";
+  margin-top: 2vw;
+}
+
+.second_section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.second_container {
+  display: flex;
+}
+
+.projectimg_1 img,
+.projectimg_2 img,
+.projectimg_3 img {
+  width: 31.927vw;
+  padding: 0.5vw;
+  margin-top: 2vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* project1 codepin  */
+
+.project1_codepin {
+  width: 100%;
+  height: 1100px;
+  background-color: #e7e4df;
+}
+
+.project1_codepin_wrap {
+  display: flex;
+}
+
+/* 반응형 */
+@media (min-width: 1920px) {
+  body {
+    font-size: 16px; /* 최대 폰트 크기를 16px로 제한 */
+  }
+}
