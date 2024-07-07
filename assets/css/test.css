@@ -55,7 +55,7 @@
 }
 
 .wrap_container {
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 0px 20px;
 }
 
 .first_animation {
@@ -224,7 +224,8 @@
 
 .projectimg_1,
 .projectimg_2,
-.projectimg_3 {
+.projectimg_3,
+.projectimg_4 {
   width: 33.3333%;
   margin-top: 2vw;
   height: 100vh;
@@ -232,10 +233,15 @@
 
 .projectimg_1 img,
 .projectimg_2 img,
-.projectimg_3 img {
+.projectimg_3 img,
+.projectimg_4 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.projectimg_4 {
+  display: none;
 }
 
 .projectimg_1 {
@@ -254,7 +260,7 @@
 
   .projecn1_left_wrap {
     width: 50%;
-    height: calc(100vh - 44px);
+    height: 100vh;
 
     display: none;
     opacity: 0;
@@ -316,13 +322,13 @@
 
   .project1_right_wrap {
     width: 16.7777%;
-    height: calc(100vh - 44px);
+    height: 100vh;
     justify-content: center;
     display: flex;
     text-align: center;
     flex-direction: column;
     position: relative;
-
+    opacity: 0;
     display: none;
   }
 

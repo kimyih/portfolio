@@ -6,6 +6,8 @@
     <title>portfolio</title>
     <link rel="stylesheet" href="./assets/css/test.css" />
     <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/script/lenis.js" />
+
     <!-- GSAP 라이브러리 추가 -->
     <link rel="preconnect" href="//fdn.fontcdn.ir" />
     <link rel="preconnect" href="//v1.fontapi.ir" />
@@ -104,6 +106,9 @@
             <div class="projectimg_3">
               <img src="./assets/img/project3.png" alt="프로젝트3" />
             </div>
+            <div class="projectimg_4">
+              <img src="./assets/img/project4.png" alt="프로젝트3" />
+            </div>
           </div>
         </div>
         <!-- //second_section -->
@@ -128,7 +133,7 @@
               display: "flex",
               opacity: 1,
               y: 0,
-              duration: 0.5,
+              duration: 0.2,
             });
           },
           onLeaveBack: () => {
@@ -148,12 +153,11 @@
         images.forEach((img, i) => {
           gsap.fromTo(
             img,
-            { y: 100 + i * 600, opacity: 0 }, // 각 이미지에 시작 위치 차별화
+            { y: 0 + i * 600, opacity: 0 }, // 각 이미지에 시작 위치 차별화
             {
               y: 0,
               opacity: 1,
               duration: 2,
-              // ease: "power2.out", // 애니메이션의 가속과 감속 설정
               scrollTrigger: {
                 trigger: ".second_section", // 전체 섹션을 트리거로 설정
                 start: "top center+=100", // 스크롤이 조금 덜 된 시점에 시작
@@ -174,20 +178,21 @@
             scrub: true,
             pin: true,
             pinSpacing: true,
+            markers: true,
           },
         });
 
         tl.to(".projectimg_1 img", {
           x: "206.1%", // 이미지들을 오른쪽으로 이동
           ease: "power2.inOut", // 일정한 속도로 애니메이션 설정
-          duration: 4,
+          duration: 8,
         })
           .to(
             ".projectimg_2 img",
             {
               x: "103.1%", // 이미지들을 오른쪽으로 이동
               ease: "power2.inOut", // 일정한 속도로 애니메이션 설정
-              duration: 4,
+              duration: 8,
             },
             "<" // 이 줄이 있어야 두 애니메이션이 동시에 시작됨
           )
@@ -197,7 +202,7 @@
             {
               display: "block",
               opacity: 1,
-              duration: 2,
+              duration: 8,
               ease: "power2.inOut",
               onStart: () =>
                 gsap.set(".projecn1_left_wrap", { display: "block" }),
