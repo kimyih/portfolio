@@ -56,7 +56,6 @@
 
 .wrap_container {
   padding: 0 20px 20px 20px;
-  overflow: hidden;
 }
 
 .first_animation {
@@ -214,15 +213,12 @@
   margin-top: 2vw;
 }
 
-.second_section {
-  height: 100%;
-}
-
 .second_container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 1%;
+  z-index: 1;
 }
 
 .projectimg_1,
@@ -249,130 +245,135 @@
   z-index: 2;
 }
 
-/* project1 codepin  */
-
-.project1_codepin {
-  width: 100%;
-  height: calc(100vh - 44px);
-  background-color: #e7e4df;
-}
-
-.project1_codepin_wrap {
+.second_section {
   display: flex;
   gap: 1%;
+  height: 100vh;
+
+  .projecn1_left_wrap {
+    width: 50%;
+    height: calc(100vh - 44px);
+
+    display: none;
+    opacity: 0;
+
+    .project1_title {
+      width: 100%;
+      margin-top: 28px;
+
+      .pr1_codepin {
+        font-size: 10vw;
+        font-family: "SF Pro Display";
+        font-weight: 30;
+        line-height: 86%;
+      }
+
+      .pr1_project {
+        font-size: 10vw;
+        font-family: "SF Pro Display";
+        font-weight: 30;
+        line-height: 94%;
+      }
+    }
+
+    .project1_line_wrap {
+      width: 100%;
+      margin-top: 2.3vw;
+
+      .project1_line {
+        width: 34vw;
+        height: 1px;
+        background-color: #000;
+      }
+
+      .project1_line_info {
+        width: 34vw;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 6px;
+
+        .pj_line_title {
+          font-size: 18px;
+          font-family: "Roboto";
+          font-weight: normal;
+          letter-spacing: -0.36px;
+          line-height: 22px;
+          text-transform: uppercase;
+        }
+
+        .pj_line_arrow img {
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  /* //projecn1_left_wrap */
+
+  .project1_right_wrap {
+    width: 16.7777%;
+    height: calc(100vh - 44px);
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+
+    display: none;
+  }
+
+  .pj1_skill {
+    display: flex;
+    flex-direction: column;
+
+    display: none;
+
+    .pj1_skill_title {
+      font-size: 18px;
+      color: #000;
+      line-height: 22px;
+      letter-spacing: -0.36px;
+      text-align: right;
+
+      display: none;
+    }
+
+    .pj1_skill_desc1,
+    .pj1_skill_desc2,
+    .pj1_skill_desc3 {
+      opacity: 0.4;
+      text-align: right;
+      letter-spacing: -2%;
+      line-height: 21px;
+
+      display: none;
+    }
+  }
+
+  .pj1_desc {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    font-family: "nanumSquareNeo";
+    line-height: 150%;
+  }
+
+  .projecn1_img_slider {
+    width: 33.333%;
+    height: calc(100vh - 44px);
+  }
+
+  .projecn1_img_slider img {
+    width: 100%;
+    height: calc(100vh - 44px);
+    object-fit: cover;
+  }
 }
 
-.projecn1_left_wrap {
-  width: 50%;
-  height: calc(100vh - 44px);
-}
-
-.project1_title {
-  width: 100%;
-  margin-top: 28px;
-}
-
-.pr1_codepin {
-  font-size: 10vw;
-  font-family: "SF Pro Display";
-  font-weight: 30;
-  line-height: 86%;
-}
-
-.pr1_project {
-  font-size: 10vw;
-  font-family: "SF Pro Display";
-  font-weight: 30;
-  line-height: 94%;
-}
-
-.project1_line_wrap {
-  width: 100%;
-  margin-top: 2.3vw;
-}
-
-.project1_line {
-  width: 34vw;
-  height: 1px;
-  background-color: #000;
-}
-
-.project1_line_info {
-  width: 34vw;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 6px;
-}
-
-.pj_line_title {
-  font-size: 18px;
-  font-family: "Roboto";
-  font-weight: normal;
-  letter-spacing: -0.36px;
-  line-height: 22px;
-  text-transform: uppercase;
-}
-
-.pj_line_arrow img {
-  line-height: 22px;
-}
-
-.project1_right_wrap {
-  width: 16.7777%;
-  height: calc(100vh - 44px);
-  justify-content: center;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.pj1_skill {
-  display: flex;
-  flex-direction: column;
-}
-
-.pj1_skill_title {
-  font-size: 18px;
-  color: #000;
-  line-height: 22px;
-  letter-spacing: -0.36px;
-  text-align: right;
-}
-
-.pj1_skill_desc1,
-.pj1_skill_desc2,
-.pj1_skill_desc3 {
-  opacity: 0.4;
-  text-align: right;
-  letter-spacing: -2%;
-  line-height: 21px;
-}
-
-.pj1_desc {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  font-family: "nanumSquareNeo";
-  line-height: 150%;
-}
-
-.projecn1_img_slider {
-  width: 100%;
-  height: calc(100vh - 44px);
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.projecn1_img_slider .slider_img {
-  position: absolute;
-  top: 0;
-  height: 100%;
-}
+/* project2 bookin */
 
 /* 반응형 */
 @media (min-width: 1920px) {

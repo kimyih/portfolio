@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>portfolio</title>
-    <link rel="stylesheet" href="./assets/css/portfolio2.css" />
+    <link rel="stylesheet" href="./assets/css/test.css" />
     <link rel="stylesheet" href="./assets/css/font.css" />
     <!-- GSAP 라이브러리 추가 -->
     <link rel="preconnect" href="//fdn.fontcdn.ir" />
@@ -65,58 +65,44 @@
 
         <div class="anim_section"></div>
 
-        <div class="project1_codepin">
-          <div class="project1_codepin_wrap">
-            <div class="projecn1_left_wrap">
-              <div class="project1_title">
-                <span class="pr1_codepin">Codepin</span>
-                <span class="pr1_project">PROJECT</span>
-              </div>
-              <div class="project1_line_wrap">
-                <div class="project1_line"></div>
-                <div class="project1_line_info">
-                  <div class="pj_line_title">Code View</div>
-                  <div class="pj_line_arrow">
-                    <img src="./assets/img/Arrow1.svg" alt="" />
-                  </div>
+        <div class="second_section">
+          <div class="projecn1_left_wrap">
+            <div class="project1_title">
+              <span class="pr1_codepin">Codepin</span>
+              <span class="pr1_project">PROJECT</span>
+            </div>
+            <div class="project1_line_wrap">
+              <div class="project1_line"></div>
+              <div class="project1_line_info">
+                <div class="pj_line_title">Code View</div>
+                <div class="pj_line_arrow">
+                  <img src="./assets/img/Arrow1.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="project1_right_wrap">
-              <div class="pj1_skill">
-                <span class="pj1_skill_title">[SKILL]</span>
-                <span class="pj1_skill_desc1">MYSQL</span>
-                <span class="pj1_skill_desc2">Javascript</span>
-                <span class="pj1_skill_desc3">PHP</span>
-              </div>
-              <div class="pj1_desc">
-                <span class="pj1_desc1"
-                  >Codepin은 코드를 폴더별로 관리하고</span
-                >
-                <span class="pj1_desc2"
-                  >URL 입력 시 사이트 정보를 확인하며,</span
-                >
-                <span class="pj1_desc3"
-                  >유용한 코드를 공유하는 공간입니다.</span
-                >
-              </div>
+          </div>
+          <div class="project1_right_wrap">
+            <div class="pj1_skill">
+              <span class="pj1_skill_title">[SKILL]</span>
+              <span class="pj1_skill_desc1">MYSQL</span>
+              <span class="pj1_skill_desc2">Javascript</span>
+              <span class="pj1_skill_desc3">PHP</span>
             </div>
-            <div class="projecn1_img_slider">
-              <img
-                src="./assets/img/project1.png"
-                alt=""
-                class="slider_img img1"
-              />
-              <img
-                src="./assets/img/project2.png"
-                alt=""
-                class="slider_img img2"
-              />
-              <img
-                src="./assets/img/project3.png"
-                alt=""
-                class="slider_img img3"
-              />
+            <div class="pj1_desc">
+              <span class="pj1_desc1">Codepin은 코드를 폴더별로 관리하고</span>
+              <span class="pj1_desc2">URL 입력 시 사이트 정보를 확인하며,</span>
+              <span class="pj1_desc3">유용한 코드를 공유하는 공간입니다. </span>
+            </div>
+          </div>
+          <div class="second_container">
+            <div class="projectimg_1">
+              <img src="./assets/img/project1.png" alt="프로젝트1" />
+            </div>
+            <div class="projectimg_2">
+              <img src="./assets/img/project2.png" alt="프로젝트2" />
+            </div>
+            <div class="projectimg_3">
+              <img src="./assets/img/project3.png" alt="프로젝트3" />
             </div>
           </div>
         </div>
@@ -157,39 +143,67 @@
         });
 
         // 이미지 애니메이션 설정
-        gsap.set(".img1", { x: "-206%" });
-        gsap.set(".img2", { x: "-103%" });
-        gsap.set(".img3", { x: "0%" });
+        const images = document.querySelectorAll(".second_container img");
 
-        gsap.to(".img1", {
-          x: "0%",
+        images.forEach((img, i) => {
+          gsap.fromTo(
+            img,
+            { y: 100 + i * 600, opacity: 0 }, // 각 이미지에 시작 위치 차별화
+            {
+              y: 0,
+              opacity: 1,
+              duration: 2,
+              // ease: "power2.out", // 애니메이션의 가속과 감속 설정
+              scrollTrigger: {
+                trigger: ".second_section", // 전체 섹션을 트리거로 설정
+                start: "top center+=100", // 스크롤이 조금 덜 된 시점에 시작
+                end: "top top", // 트리거가 끝나는 시점
+                scrub: 1, // 스크롤과 애니메이션을 동기화
+              },
+              delay: i * 2, // 각 이미지에 시간차 적용
+            }
+          );
+        });
+
+        // header와 second_container가 만났을 때 애니메이션 설정
+        const tl = gsap.timeline({
           scrollTrigger: {
-            trigger: ".anim_section",
-            start: "top center",
+            trigger: ".second_section",
+            start: "top top",
             end: "bottom top",
-            scrub: 1,
+            scrub: true,
+            pin: true,
+            pinSpacing: true,
           },
         });
 
-        gsap.to(".img2", {
-          x: "103%",
-          scrollTrigger: {
-            trigger: ".anim_section",
-            start: "top center",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-
-        gsap.to(".img3", {
-          x: "206%",
-          scrollTrigger: {
-            trigger: ".anim_section",
-            start: "top center",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
+        tl.to(".projectimg_1 img", {
+          x: "206.1%", // 이미지들을 오른쪽으로 이동
+          ease: "power2.inOut", // 일정한 속도로 애니메이션 설정
+          duration: 4,
+        })
+          .to(
+            ".projectimg_2 img",
+            {
+              x: "103.1%", // 이미지들을 오른쪽으로 이동
+              ease: "power2.inOut", // 일정한 속도로 애니메이션 설정
+              duration: 4,
+            },
+            "<" // 이 줄이 있어야 두 애니메이션이 동시에 시작됨
+          )
+          .fromTo(
+            ".projecn1_left_wrap",
+            { display: "none", opacity: 0 },
+            {
+              display: "block",
+              opacity: 1,
+              duration: 2,
+              ease: "power2.inOut",
+              onStart: () =>
+                gsap.set(".projecn1_left_wrap", { display: "block" }),
+            },
+            "<"
+          );
       });
     </script>
   </body>
