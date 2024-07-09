@@ -224,8 +224,7 @@
 
 .projectimg_1,
 .projectimg_2,
-.projectimg_3,
-.projectimg_4 {
+.projectimg_3 {
   width: 33.3333%;
   margin-top: 2vw;
   height: 100vh;
@@ -233,15 +232,10 @@
 
 .projectimg_1 img,
 .projectimg_2 img,
-.projectimg_3 img,
-.projectimg_4 img {
+.projectimg_3 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.projectimg_4 {
-  display: none;
 }
 
 .projectimg_1 {
@@ -373,6 +367,33 @@
     width: 100%;
     height: calc(100vh - 44px);
     object-fit: cover;
+  }
+
+  /* 이미지 슬라이드 */
+  .img_slide {
+    width: 33.333%;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    top: 0%;
+    bottom: auto;
+    left: auto;
+    right: 0%;
+  }
+  .projectimg_4,
+  .projectimg_5,
+  .projectimg_6 {
+    width: 100%;
+    height: 100vh;
+    z-index: 6;
+    position: absolute;
+    opacity: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
