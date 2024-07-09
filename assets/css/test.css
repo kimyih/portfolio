@@ -13,20 +13,15 @@
   background-color: #e7e4df;
   font-size: 16px;
   display: none;
-  /* 처음에는 숨김 */
   justify-content: space-between;
   height: 44px;
   position: fixed;
-  /* 고정 */
   top: 0;
   left: 0;
   width: 100%;
   opacity: 0;
-  /* 투명도 초기값 */
   z-index: 1000;
-  /* 다른 요소보다 위에 위치 */
   transition: opacity 0.2s, transform 0.2s;
-  /* 애니메이션 추가 */
 }
 
 .anim_section {
@@ -61,7 +56,6 @@
 .first_animation {
   display: flex;
   height: 36vw;
-  /* 높이를 vw 단위로 설정 */
 }
 
 /* 각 anibox 설정, 전체 너비 대비 비율로 너비 설정 */
@@ -72,10 +66,8 @@
 .anibox6,
 .anibox7 {
   height: 36vw;
-  /* 높이를 vw 단위로 설정 */
   background-color: #000000;
   flex-grow: 1;
-  /* flex 사용하여 자동으로 너비 조절 */
 }
 
 .anibox4 {
@@ -86,7 +78,6 @@
   background-image: url("../img/ani_bg.png");
 }
 
-/* 마진 설정, 비율로 조정 */
 .anibox1 {
   margin-left: 3.125vw;
   margin-right: 0.729vw;
@@ -172,6 +163,25 @@
   height: 992px;
   border-bottom: 1px solid #000;
   position: relative;
+  cursor: none;
+}
+
+/* 마우스 커서 */
+
+.cursor {
+  width: 250px;
+  height: 250px;
+  background-image: url('../img/cursor.jpg');
+  background-size: cover;
+  /* 이미지 커버 효과 */
+  border: 1px solid #ffffff20;
+  position: absolute;
+  left: -100px;
+  top: -100px;
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+
 }
 
 .bottom_line1 {
@@ -203,12 +213,90 @@
   font-weight: bold;
   line-height: 86%;
   text-align: justify;
-  /* Not supported by the browser. */
   text-transform: uppercase;
   letter-spacing: 0px;
   z-index: 2;
   font-family: "San Francisco";
   margin-top: 44px;
+}
+
+/* 소개글 이미지 */
+
+.intro_text {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro_text>h1,
+.intro_text p {
+  position: relative;
+}
+
+.on {
+  animation: intro_text 1s ease-in-out both;
+}
+
+@keyframes intro_text {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    transform: translateY(100%);
+  }
+
+  95% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    clip-path: polygon(0% 00%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.introduction span,
+.introduction img {
+
+  vertical-align: middle;
+  /* 중간 정렬 */
+  margin: 0 5px;
+  /* 요소들 사이의 여백 */
+}
+
+.introduction img {
+  width: 8vw;
+  /* 이미지 너비 */
+  height: 7vh;
+  /* 이미지 높이 자동 조절 */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.inline-image.intro1 {
+  width: 18vw;
+  height: 6vh;
+}
+
+.inline-image.intro2 {
+  width: 23vw;
+}
+
+.inline-image.intro3 {
+  width: 16vw
+}
+
+.inline-image.intro4 {
+  width: 8vw
+}
+
+.inline-image.intro5 {
+  width: 13vw
+}
+
+
+.inline-image.intro6 {
+  width: 17vw
+}
+
+.inline-image.intro7 {
+  width: 24vw
 }
 
 .second_container {
@@ -248,155 +336,157 @@
   display: flex;
   gap: 1%;
   height: 100vh;
+  position: sticky;
+  /* 여기를 수정 */
+  top: 0;
+  /* 섹션이 상단에 고정될 위치 지정 */
+  z-index: 10;
+  /* 다른 요소들 위에 올라오도록 z-index 조정 */
+}
+
+.projecn1_left_wrap {
+  width: 50%;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  z-index: 2;
+}
+
+.project1_title {
+  width: 100%;
+  margin-top: 44px;
+  position: sticky;
+}
+
+.pr1_codepin,
+.pr2_booking {
+  font-size: 10vw;
+  font-family: "SF Pro Display";
+  font-weight: 30;
+  line-height: 86%;
+}
+
+.pr1_project {
+  font-size: 10vw;
+  font-family: "SF Pro Display";
+  font-weight: 30;
+  line-height: 94%;
+}
+
+.project1_line_wrap {
+  width: 100%;
+  margin-top: 2.3vw;
+}
+
+.project1_line {
+  width: 34vw;
+  height: 1px;
+  background-color: #000;
+}
+
+.project1_line_info {
+  width: 34vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.pj_line_title {
+  font-size: 18px;
+  font-family: "Roboto";
+  font-weight: normal;
+  letter-spacing: -0.36px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.pj_line_arrow img {
+  line-height: 22px;
+}
+
+.project1_right_wrap {
+  width: 16.7777%;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
   position: relative;
+  opacity: 0;
+  display: none;
+}
 
-  .projecn1_left_wrap {
-    width: 50%;
-    height: 100vh;
-    display: none;
-    opacity: 0;
-    /* position: absolute; */
-    z-index: 2;
+.pj1_skill {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35vw;
+}
 
-    .project1_title {
-      width: 100%;
-      margin-top: 44px;
+.pj1_skill_title {
+  font-size: 18px;
+  color: #000;
+  line-height: 22px;
+  letter-spacing: -0.36px;
+  text-align: right;
+}
 
-      .pr1_codepin {
-        font-size: 10vw;
-        font-family: "SF Pro Display";
-        font-weight: 30;
-        line-height: 86%;
-      }
+.pj1_skill_desc1,
+.pj1_skill_desc2,
+.pj1_skill_desc3 {
+  opacity: 0.4;
+  text-align: right;
+  letter-spacing: -2%;
+  line-height: 21px;
+}
 
-      .pr1_project {
-        font-size: 10vw;
-        font-family: "SF Pro Display";
-        font-weight: 30;
-        line-height: 94%;
-      }
-    }
+.pj1_desc {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  font-family: "nanumSquareNeo";
+  line-height: 150%;
+}
 
-    .project1_line_wrap {
-      width: 100%;
-      margin-top: 2.3vw;
+.projecn1_img_slider {
+  width: 33.333%;
+  height: calc(100vh - 44px);
+}
 
-      .project1_line {
-        width: 34vw;
-        height: 1px;
-        background-color: #000;
-      }
+.projecn1_img_slider img {
+  width: 100%;
+  height: calc(100vh - 44px);
+  object-fit: cover;
+}
 
-      .project1_line_info {
-        width: 34vw;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 6px;
+.img_slide {
+  width: 33.333%;
+  height: 100vh;
+  position: sticky;
+  /* sticky 포지션 적용 */
+  top: 0px;
+  /* 상단에 고정될 위치 설정 */
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+}
 
-        .pj_line_title {
-          font-size: 18px;
-          font-family: "Roboto";
-          font-weight: normal;
-          letter-spacing: -0.36px;
-          line-height: 22px;
-          text-transform: uppercase;
-        }
+.img-slider-item {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+}
 
-        .pj_line_arrow img {
-          line-height: 22px;
-        }
-      }
-    }
-  }
-
-  /* //projecn1_left_wrap */
-
-  .project1_right_wrap {
-    width: 16.7777%;
-    height: 100vh;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    position: relative;
-    opacity: 0;
-    display: none;
-
-  }
-
-  .pj1_skill {
-    display: flex;
-    flex-direction: column;
-    margin-top: 35vw;
-
-    .pj1_skill_title {
-      font-size: 18px;
-      color: #000;
-      line-height: 22px;
-      letter-spacing: -0.36px;
-      text-align: right;
-    }
-
-    .pj1_skill_desc1,
-    .pj1_skill_desc2,
-    .pj1_skill_desc3 {
-      opacity: 0.4;
-      text-align: right;
-      letter-spacing: -2%;
-      line-height: 21px;
-    }
-  }
-
-  .pj1_desc {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    font-family: "nanumSquareNeo";
-    line-height: 150%;
-  }
-
-  .projecn1_img_slider {
-    width: 33.333%;
-    height: calc(100vh - 44px);
-  }
-
-  .projecn1_img_slider img {
-    width: 100%;
-    height: calc(100vh - 44px);
-    object-fit: cover;
-  }
-
-  /* 이미지 슬라이드 */
-  .img_slide {
-    width: 33.333%;
-    height: 100vh;
-    position: relative;
-    flex-direction: column;
-    display: flex;
-    top: 0%;
-    bottom: auto;
-    left: auto;
-    right: 0%;
-  }
-
-
-  .img-slider-item {
-    width: 100%;
-    height: 100vh;
-    object-fit: fill;
-    position: absolute;
-    overflow: hidden;
-  }
-
-  .img-slider-item.next {
-    top: 100%;
-    bottom: auto;
-    left: 0%;
-    right: 0%;
-  }
+.img-slider-item.next {
+  top: 100%;
+  /* 처음에 보이지 않도록 설정 */
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+  z-index: 1;
 }
 
 .img-slider-item.next._2 {
@@ -417,12 +507,31 @@ img {
   display: inline-block;
 }
 
-/* project2 bookin */
-
-/* 반응형 */
 @media (min-width: 1920px) {
   body {
     font-size: 16px;
-    /* 최대 폰트 크기를 16px로 제한 */
   }
+}
+
+.scroll-anim-wrapper {
+  position: relative;
+}
+
+.scroll-anim-wrapper.overflow-clip {
+  height: 1000vh;
+}
+
+.overflow-clip {
+  overflow: clip;
+}
+
+
+.experiment-content-wrapper text {
+  padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
 }
