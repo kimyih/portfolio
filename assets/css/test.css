@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
+
+
 #wrap {
   width: 100%;
   background-color: #e7e4df;
+}
+
+/* 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #header {
@@ -569,4 +576,97 @@
   bottom: 0%;
   left: 0%;
   right: 0%;
+}
+
+#contack {
+  width: 100%;
+  height: 100vh;
+}
+
+.contack__wrap {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/contact.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+
+  .comment_aside {
+    width: 30%;
+    height: 100%;
+    position: relative;
+
+    .comment_aside {
+      width: 100%;
+      background-color: #E3E0DB;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+    }
+  }
+
+  .cotack_box {
+    width: 48%;
+    background-color: #000000;
+    height: 100vh;
+    position: relative;
+
+    .contack_text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: 'San Francisco';
+      font-weight: 100;
+      margin-left: 2.5vw;
+      margin-top: 3vw;
+
+      .contack_text1 {
+        font-size: 7vw;
+        color: #ffff;
+        line-height: 86%;
+      }
+
+      .contack_text2 {
+        font-size: 7vw;
+        color: #ffff;
+        line-height: 86%;
+      }
+
+      .contack_text3 {
+        font-size: 1vw;
+        color: #ffff;
+        line-height: 86%;
+        margin-top: 1.8vw;
+      }
+    }
+
+    .comment_box {
+      width: 100%;
+      background-color: #E3E0DB;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+    }
+  }
+
+  .cotack_right {
+    width: 22%;
+    height: 100vh;
+    position: relative;
+
+    .comment_right {
+      width: 100%;
+      background-color: #E3E0DB;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+    }
+  }
 }

@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".second_section",
       start: "top top",
-      end: "bottom+=600% top",
+      end: "bottom+=800% top",
       scrub: 1,
       pin: true,
       pinSpacing: true,
@@ -90,45 +90,43 @@ document.addEventListener("DOMContentLoaded", function () {
   // 이미지들을 오른쪽으로 이동하는 애니메이션
   tl.to(".projectimg_1 img", {
     x: "206.2%",
-    duration: 40,
+    duration: 20,
     ease: "power1.inOut",
   })
-    .to(
-      ".projectimg_2 img",
-      { x: "103.1%", duration: 40, ease: "power1.inOut" },
-      "<"
-    )
-    .fromTo(
-      ".projecn1_left_wrap",
+    .to(".projectimg_2 img", {
+      x: "103.1%",
+      duration: 20,
+      ease: "power1.inOut"
+    }, "<")
+    .fromTo(".projecn1_left_wrap",
       { display: "none", opacity: 0 },
       {
         display: "block",
         opacity: 1,
-        duration: 40,
+        duration: 20,
         ease: "power1.inOut",
         onStart: () => gsap.set(".projecn1_left_wrap", { display: "block" }),
       },
       "<"
     )
-    .fromTo(
-      ".project1_right_wrap",
+    .fromTo(".project1_right_wrap",
       { display: "none", opacity: 0 },
       {
         display: "block",
         opacity: 1,
-        duration: 40,
+        duration: 20,
         ease: "power1.inOut",
         onStart: () => gsap.set(".project1_right_wrap", { display: "block" }),
       },
       "<"
     );
 
-  // 이미지 슬라이드 애니메이션과 텍스트 변경
+
+  // 두 번째 단계: 슬라이드 업 애니메이션과 텍스트 변경
   const slides = [".img-slider-item.next._2", ".img-slider-item.next._3", ".img-slider-item.next._4", ".img-slider-item.next._5", ".img-slider-item.next._6"];
-  const titles = ["Codepin", "Booking", "Qbit", "REACT.js", "REACT.js", "VUE.js"];
-  const projects = ["PROJECT", "PROJECT", "PROJECT", "API-MOVIE", "API-MUSIC", "MOVIE-INFO"];
+  const titles = ["Booking", "Qbit", "REACT.js", "REACT.js", "VUE.js"];
+  const projects = ["PROJECT", "PROJECT", "API-MOVIE", "API-MUSIC", "MOVIE"];
   const skills = [
-    ["MYSQL", "Javascript", "PHP"],
     ["React.js", "Python", "MongoDB"],
     ["Next.js", "Javascript", "MongoDB"],
     ["React.js", "Python", "Youtube-Api"],
@@ -136,102 +134,56 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Vue.js", "Vue Router", "Tmdb-Api"]
   ];
   const descriptions = [
-    ["Codepin은 코드를 URL로 관리하고", "URL 입력 시 사이트 정보를 확인하며,", "유용한 코드를 공유하는 공간입니다."],
     ["Booking은 온라인 예약 시스템으로", "사용자 친화적인 인터페이스를 제공하며,", "다양한 서비스 예약이 가능합니다."],
     ["Qbit은 테이블 위 QR코드로", "손님들에게 손쉬운 주문 경험을 제공하는,", "메뉴 관리 및 오더 시스템입니다."],
     ["Youtube데이터를 활용한", "영화 정보 제공 사이트입니다.", "채널 정보와 영상을 쉽게 검색할 수 있습니다."],
-    ["나만의 플레이리스트 사이트는.", "YoutubeApi와 Python을 활용한,", "맞춤형 플레이리스트를 제공합니다."],
+    ["나만의 플레이리스트 사이트는", "YoutubeApi와 Python을 활용한,", "맞춤형 플레이리스트를 제공합니다."],
     ["Tmdb-Api를 활용한", "영화 정보 제공 사이트입니다.", "영화 정보 및 출연진 정보 등 다양하게 제공합니다."]
   ];
 
   slides.forEach((slide, index) => {
-    tl.set(slide, { zIndex: 10 + index })
-      .to(slide, {
-        yPercent: -100,
-        duration: 40,
-        ease: "power1.inOut",
-        onUpdate: function () {
-          const progress = this.progress();
-          updateContent(index, progress);
-        },
-      });
-  });
-
-  // 마지막 슬라이드 고정
-  tl.to(".img-slider-item.next._6", {
-    yPercent: -100,
-    duration: 20,
-    ease: "power1.inOut",
+    tl.to(slide, {
+      yPercent: -100,
+      duration: 40,
+      ease: "power1.inOut",
+      onUpdate: function () {
+        const progress = this.progress();
+        if (progress >= 0.33) {  // 이 부분을 추가
+          updateContent(index, (progress - 0.33) / 0.67);  // 이 부분을 수정
+        }
+      }
+    });
   });
 
   function updateContent(index, progress) {
     if (index >= titles.length) return;
 
-    // 타이틀 변경
-    gsap.to(".pr1_codepin", {
-      opacity: progress,
-      y: -20 * (1 - progress),
-      duration: 0,
-      onUpdate: () => {
-        document.querySelector(".pr1_codepin").textContent = titles[index];
-      }
-    });
+    updateElement(".pr1_codepin", titles[index], progress);
+    updateElement(".pr1_project", projects[index], progress);
 
-    // 프로젝트 번호 변경
-    gsap.to(".pr1_project", {
-      opacity: progress,
-      y: -20 * (1 - progress),
-      duration: 0,
-      onUpdate: () => {
-        document.querySelector(".pr1_project").textContent = projects[index];
-      }
-    });
-
-    // 스킬 설명 변경
     skills[index].forEach((skill, i) => {
-      gsap.to(`.pj1_skill_desc${i + 1}`, {
-        opacity: progress,
-        y: -20 * (1 - progress),
-        duration: 0,
-        onUpdate: () => {
-          document.querySelector(`.pj1_skill_desc${i + 1}`).textContent = skill;
-        }
-      });
+      updateElement(`.pj1_skill_desc${i + 1}`, skill, progress);
     });
 
-    // 프로젝트 설명 변경
     descriptions[index].forEach((desc, i) => {
-      gsap.to(`.pj1_desc${i + 1}`, {
-        opacity: progress,
-        y: -20 * (1 - progress),
-        duration: 0,
-        onUpdate: () => {
-          document.querySelector(`.pj1_desc${i + 1}`).textContent = desc;
-        }
-      });
+      updateElement(`.pj1_desc${i + 1}`, desc, progress);
     });
   }
 
-  // 텍스트 스크롤 애니메이션
-  const textElements = document.querySelectorAll(".projecn1_left_wrap *, .project1_right_wrap *");
-  textElements.forEach((element) => {
-    gsap.fromTo(
-      element,
-      { y: 100, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: element,
-          start: "top bottom-=100",
-          end: "top center",
-          scrub: true,
-          toggleActions: "play none none reverse",
-        },
+  function updateElement(selector, newText, progress) {
+    const element = document.querySelector(selector);
+    if (!element) return;
+
+    gsap.to(element, {
+      y: -20 * (1 - progress),
+      opacity: progress,
+      duration: 0.1,
+      onUpdate: () => {
+        element.textContent = newText;
       }
-    );
-  });
+    });
+  }
+
 
   // 스크롤 잠금 및 해제 함수
   function lockScroll() {
