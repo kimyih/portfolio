@@ -28,7 +28,7 @@
   height: 70vh;
 }
 
-#header>ul {
+#header > ul {
   list-style: none;
   display: flex;
   margin: 20px;
@@ -39,11 +39,11 @@
   border-bottom: 1px solid #000;
 }
 
-#header>ul>li {
+#header > ul > li {
   display: inline;
 }
 
-#header>ul>li>a {
+#header > ul > li > a {
   color: #000000;
   text-decoration: none;
   font-weight: 300;
@@ -109,7 +109,8 @@
   background-color: #e7e4df;
 }
 
-.first_top_wrap {}
+.first_top_wrap {
+}
 
 .first_top_line1 {
   width: 100%;
@@ -124,7 +125,8 @@
   padding: 20px 0px;
 }
 
-.first_bottom_wrap {}
+.first_bottom_wrap {
+}
 
 .nav {
   background-color: #e7e4df;
@@ -136,7 +138,7 @@
   border-bottom: 1px solid #000000;
 }
 
-.nav>ul {
+.nav > ul {
   position: absolute;
   list-style: none;
   display: flex;
@@ -148,11 +150,11 @@
   bottom: 0;
 }
 
-.nav>ul>li {
+.nav > ul > li {
   display: inline;
 }
 
-.nav>ul>li>a {
+.nav > ul > li > a {
   color: #000000;
   text-decoration: none;
   font-weight: 300;
@@ -171,7 +173,7 @@
 .cursor {
   width: 250px;
   height: 250px;
-  background-image: url('../img/cursor.jpg');
+  background-image: url("../img/cursor.jpg");
   background-size: cover;
   /* 이미지 커버 효과 */
   border: 1px solid #ffffff20;
@@ -181,7 +183,6 @@
   border-radius: 50%;
   z-index: 10000;
   pointer-events: none;
-
 }
 
 .bottom_line1 {
@@ -218,6 +219,14 @@
   z-index: 2;
   font-family: "San Francisco";
   margin-top: 44px;
+  hyphens: auto;
+  word-spacing: -2px;
+}
+
+.justified-text {
+  text-align: justify;
+  width: 300px;
+  hyphens: manual;
 }
 
 /* 소개글 이미지 */
@@ -227,7 +236,7 @@
   overflow: hidden;
 }
 
-.intro_text>h1,
+.intro_text > h1,
 .intro_text p {
   position: relative;
 }
@@ -253,7 +262,6 @@
 
 .introduction span,
 .introduction img {
-
   vertical-align: middle;
   /* 중간 정렬 */
   margin: 0 5px;
@@ -279,24 +287,23 @@
 }
 
 .inline-image.intro3 {
-  width: 16vw
+  width: 16vw;
 }
 
 .inline-image.intro4 {
-  width: 8vw
+  width: 8vw;
 }
 
 .inline-image.intro5 {
-  width: 13vw
+  width: 13vw;
 }
 
-
 .inline-image.intro6 {
-  width: 17vw
+  width: 17vw;
 }
 
 .inline-image.intro7 {
-  width: 24vw
+  width: 24vw;
 }
 
 .second_container {
@@ -392,7 +399,7 @@
 }
 
 .pj_line_title {
-  font-size: 18px;
+  font-size: 1vw;
   font-family: "Roboto";
   font-weight: normal;
   letter-spacing: -0.36px;
@@ -423,11 +430,12 @@
 }
 
 .pj1_skill_title {
-  font-size: 18px;
+  font-size: 1vw;
   color: #000;
   line-height: 22px;
   letter-spacing: -0.36px;
   text-align: right;
+  margin-bottom: 30vw;
 }
 
 .pj1_skill_desc1,
@@ -448,6 +456,7 @@
   position: absolute;
   font-family: "nanumSquareNeo";
   line-height: 150%;
+  font-size: 1vw;
 }
 
 .projecn1_img_slider {
@@ -524,7 +533,6 @@ img {
 .overflow-clip {
   overflow: clip;
 }
-
 
 .experiment-content-wrapper text {
   padding: 0;
