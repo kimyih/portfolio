@@ -133,11 +133,13 @@
                   >iving to push the boundaries of web development. Thank
                   you.</span
                 >
+                <div class="line__wrap">
+                  <div class="bottom_line1"></div>
+                  <div class="bottom_line2"></div>
+                  <div class="bottom_line3"></div>
+                  <div class="bottom_line4"></div>
+                </div>
               </span>
-              <div class="bottom_line1"></div>
-              <div class="bottom_line2"></div>
-              <div class="bottom_line3"></div>
-              <div class="bottom_line4"></div>
             </div>
           </div>
         </div>
@@ -335,12 +337,12 @@
         // 이미지들을 오른쪽으로 이동하는 애니메이션
         tl.to(".projectimg_1 img", {
           x: "206.1%",
-          duration: 20,
-          ease: "power2.inOut",
+          duration: 80,
+          ease: "power1.inOut",
         })
           .to(
             ".projectimg_2 img",
-            { x: "103.1%", duration: 8, ease: "power2.inOut" },
+            { x: "103.1%", duration: 80, ease: "power1.inOut" },
             "<"
           )
           .fromTo(
@@ -349,8 +351,8 @@
             {
               display: "block",
               opacity: 1,
-              duration: 20,
-              ease: "power2.inOut",
+              duration: 80,
+              ease: "power1.inOut",
               onStart: () =>
                 gsap.set(".projecn1_left_wrap", { display: "block" }),
             },
@@ -362,8 +364,8 @@
             {
               display: "block",
               opacity: 1,
-              duration: 20,
-              ease: "power2.inOut",
+              duration: 80,
+              ease: "power1.inOut",
               onStart: () =>
                 gsap.set(".project1_right_wrap", { display: "block" }),
             },
@@ -376,8 +378,8 @@
             ".img-slider-item.next._2",
             {
               yPercent: -100,
-              duration: 8,
-              ease: "power2.inOut",
+              duration: 90,
+              ease: "power1.inOut",
             },
             "+=1"
           )
@@ -386,8 +388,8 @@
             ".img-slider-item.next._3",
             {
               yPercent: -100,
-              duration: 8,
-              ease: "power2.inOut",
+              duration: 90,
+              ease: "power1.inOut",
             },
             "+=2"
           )
@@ -396,8 +398,8 @@
             ".img-slider-item.next._4",
             {
               yPercent: -100,
-              duration: 8,
-              ease: "power2.inOut",
+              duration: 90,
+              ease: "power1.inOut",
             },
             "+=2"
           )
@@ -406,8 +408,8 @@
             ".img-slider-item.next._5",
             {
               yPercent: -100,
-              duration: 8,
-              ease: "power2.inOut",
+              duration: 90,
+              ease: "power1.inOut",
             },
             "+=2"
           )
@@ -416,8 +418,8 @@
             ".img-slider-item.next._6",
             {
               yPercent: -100,
-              duration: 8,
-              ease: "power2.inOut",
+              duration: 90,
+              ease: "power1.inOut",
             },
             "+=2"
           );
@@ -440,25 +442,20 @@
           onLeaveBack: unlockScroll,
           onLeave: unlockScroll,
         });
-
-        // 커서 애니메이션
-        const cursor = document.querySelector(".cursor");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const introduction = document.getElementById("intro_text");
         const bottomWrap = document.querySelector(".bottom_wrap");
 
-        document.addEventListener("mousemove", function (e) {
-          const scrollTop = window.scrollY;
-          const scrollLeft = window.scrollX;
-          cursor.style.left = e.clientX - 125 + scrollLeft + "px";
-          cursor.style.top = e.clientY - 125 + scrollTop + "px";
-        });
+        function adjustHeight() {
+          const introHeight = introduction.offsetHeight;
+          bottomWrap.style.height = `${introHeight}px`;
+        }
 
-        bottomWrap.addEventListener("mouseenter", () => {
-          gsap.to(cursor, { opacity: 1, display: "block", duration: 0.3 });
-        });
-
-        bottomWrap.addEventListener("mouseleave", () => {
-          gsap.to(cursor, { opacity: 0, display: "none", duration: 0.3 });
-        });
+        adjustHeight();
+        window.addEventListener("resize", adjustHeight);
       });
     </script>
     <script>
@@ -466,21 +463,28 @@
         const cursor = document.querySelector(".cursor");
         const bottomWrap = document.querySelector(".bottom_wrap");
 
-        document.addEventListener("mousemove", function (e) {
-          const scrollTop = window.scrollY; // 현재 문서의 세로 스크롤 위치
-          const scrollLeft = window.scrollX; // 현재 문서의 가로 스크롤 위치
-          // 커서 위치 계산에 스크롤 위치 반영
-          cursor.style.left = e.clientX - 125 + scrollLeft + "px";
-          cursor.style.top = e.clientY - 125 + scrollTop + "px";
-        });
+        function updateCursorPosition(e) {
+          const scrollTop =
+            window.scrollY || document.documentElement.scrollTop;
+          const scrollLeft =
+            window.scrollX || document.documentElement.scrollLeft;
 
-        bottomWrap.addEventListener("mouseenter", () => {
-          gsap.to(cursor, { opacity: 1, display: "block", duration: 0.3 });
-        });
+          cursor.style.left = `${e.clientX + scrollLeft}px`;
+          cursor.style.top = `${e.clientY + scrollTop}px`;
+        }
 
-        bottomWrap.addEventListener("mouseleave", () => {
-          gsap.to(cursor, { opacity: 0, display: "none", duration: 0.3 });
-        });
+        function handleMouseEnter() {
+          cursor.classList.add("visible");
+        }
+
+        function handleMouseLeave() {
+          cursor.classList.remove("visible");
+        }
+
+        document.addEventListener("mousemove", updateCursorPosition);
+
+        bottomWrap.addEventListener("mouseenter", handleMouseEnter);
+        bottomWrap.addEventListener("mouseleave", handleMouseLeave);
       });
     </script>
   </body>

@@ -126,6 +126,7 @@
 }
 
 .first_bottom_wrap {
+  position: relative;
 }
 
 .nav {
@@ -162,8 +163,9 @@
 
 .bottom_wrap {
   display: flex;
-  height: 992px;
-  border-bottom: 1px solid #000;
+  height: auto;
+  width: 100%;
+  /* border-bottom: 1px solid #000; */
   position: relative;
   cursor: none;
 }
@@ -183,32 +185,53 @@
   border-radius: 50%;
   z-index: 10000;
   pointer-events: none;
+  opacity: 0; /* 기본적으로 숨김 */
+  transition: opacity 0.3s, transform 0.3s; /* 트랜지션 추가 */
+  transform: translate(
+    -50%,
+    -320%
+  ); /* 커서를 마우스 포인터에 맞추기 위해 추가 */
+}
+
+.cursor.visible {
+  opacity: 1; /* 커서가 보일 때의 상태 */
 }
 
 .bottom_line1 {
   width: 479px;
-  height: 992px;
+  height: auto;
   border-right: 1px solid #000000;
 }
 
 .bottom_line2 {
   width: 297px;
-  height: 992px;
+  height: auto;
   border-right: 1px solid #000000;
 }
 
 .bottom_line3 {
   width: 473px;
-  height: 992px;
+  height: auto;
   border-right: 1px solid #000000;
 }
 
 .bottom_line4 {
   width: 628px;
-  height: 992px;
+  height: auto;
+}
+
+.line__wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 1;
 }
 
 .introduction {
+  width: 100%;
   position: absolute;
   font-size: 5.6vw;
   font-weight: bold;
@@ -218,7 +241,8 @@
   letter-spacing: 0px;
   z-index: 2;
   font-family: "San Francisco";
-  margin-top: 44px;
+  padding-top: 2.5vw;
+  border-bottom: 1px solid #000;
   hyphens: auto;
   word-spacing: -2px;
 }
@@ -479,6 +503,14 @@
   display: flex;
   flex-direction: column;
   z-index: 6;
+
+  img {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .img-slider-item {
@@ -503,14 +535,6 @@
   height: 100%;
   object-fit: cover;
   position: relative;
-}
-
-img {
-  width: 100%;
-  vertical-align: middle;
-  display: inline-block;
-  height: 100%;
-  object-fit: cover;
 }
 
 @media (min-width: 1920px) {
