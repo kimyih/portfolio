@@ -310,17 +310,11 @@
           scrollTrigger: {
             trigger: ".second_section",
             start: "top top",
-            end: "bottom+=180% top",
+            end: "bottom+=300% top", // 스크롤 범위를 늘립니다
             scrub: true,
             pin: true,
             pinSpacing: true,
             markers: true,
-            onComplete: () => {
-              gsap.to(window, {
-                scrollTo: { y: window.scrollY },
-                duration: 0.1,
-              });
-            },
           },
         });
 
@@ -362,7 +356,7 @@
             "<"
           );
 
-        // 새로운 애니메이션: img-slider-item next _2 올라오기
+        // 새로운 애니메이션: img-slider-item next _2, _3, _4 순차적으로 올라오기
         tl.to(
           ".img-slider-item.next._2",
           {
@@ -372,7 +366,27 @@
             zIndex: 10,
           },
           "+=1"
-        );
+        )
+          .to(
+            ".img-slider-item.next._3",
+            {
+              yPercent: -100,
+              duration: 4,
+              ease: "power2.inOut",
+              zIndex: 11,
+            },
+            "+=2"
+          )
+          .to(
+            ".img-slider-item.next._4",
+            {
+              yPercent: -100,
+              duration: 4,
+              ease: "power2.inOut",
+              zIndex: 12,
+            },
+            "+=2"
+          );
 
         // 스크롤 잠금 및 해제 함수
         function lockScroll() {
