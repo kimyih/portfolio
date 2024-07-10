@@ -198,23 +198,37 @@
               <div class="img_slide">
                 <div class="img-slider-item next _2">
                   <img
-                    src="./assets/img/project4.png"
+                    src="./assets/img/project2.png"
                     id="big-photo-2"
-                    alt="프로젝트4"
+                    alt="프로젝트2"
                   />
                 </div>
                 <div class="img-slider-item next _3">
                   <img
-                    src="./assets/img/project1.png"
+                    src="./assets/img/project3.png"
                     id="big-photo-3"
-                    alt="프로젝트5"
+                    alt="프로젝트3"
                   />
                 </div>
                 <div class="img-slider-item next _4">
                   <img
-                    src="./assets/img/project2.png"
+                    src="./assets/img/project4.png"
                     id="big-photo-4"
+                    alt="프로젝트4"
+                  />
+                </div>
+                <div class="img-slider-item next _5">
+                  <img
+                    src="./assets/img/project5.png"
+                    id="big-photo-5"
                     alt="프로젝트5"
+                  />
+                </div>
+                <div class="img-slider-item next _6">
+                  <img
+                    src="./assets/img/project6.png"
+                    id="big-photo-6"
+                    alt="프로젝트6"
                   />
                 </div>
               </div>
@@ -310,7 +324,7 @@
           scrollTrigger: {
             trigger: ".second_section",
             start: "top top",
-            end: "bottom+=300% top", // 스크롤 범위를 늘립니다
+            end: "bottom+=300% top",
             scrub: true,
             pin: true,
             pinSpacing: true,
@@ -321,7 +335,7 @@
         // 이미지들을 오른쪽으로 이동하는 애니메이션
         tl.to(".projectimg_1 img", {
           x: "206.1%",
-          duration: 8,
+          duration: 20,
           ease: "power2.inOut",
         })
           .to(
@@ -335,7 +349,7 @@
             {
               display: "block",
               opacity: 1,
-              duration: 8,
+              duration: 20,
               ease: "power2.inOut",
               onStart: () =>
                 gsap.set(".projecn1_left_wrap", { display: "block" }),
@@ -348,7 +362,7 @@
             {
               display: "block",
               opacity: 1,
-              duration: 8,
+              duration: 20,
               ease: "power2.inOut",
               onStart: () =>
                 gsap.set(".project1_right_wrap", { display: "block" }),
@@ -357,33 +371,53 @@
           );
 
         // 새로운 애니메이션: img-slider-item next _2, _3, _4 순차적으로 올라오기
-        tl.to(
-          ".img-slider-item.next._2",
-          {
-            yPercent: -100,
-            duration: 4,
-            ease: "power2.inOut",
-            zIndex: 10,
-          },
-          "+=1"
-        )
+        tl.set(".img-slider-item.next._2", { zIndex: 10 })
+          .to(
+            ".img-slider-item.next._2",
+            {
+              yPercent: -100,
+              duration: 8,
+              ease: "power2.inOut",
+            },
+            "+=1"
+          )
+          .set(".img-slider-item.next._3", { zIndex: 11 })
           .to(
             ".img-slider-item.next._3",
             {
               yPercent: -100,
-              duration: 4,
+              duration: 8,
               ease: "power2.inOut",
-              zIndex: 11,
             },
             "+=2"
           )
+          .set(".img-slider-item.next._4", { zIndex: 12 })
           .to(
             ".img-slider-item.next._4",
             {
               yPercent: -100,
-              duration: 4,
+              duration: 8,
               ease: "power2.inOut",
-              zIndex: 12,
+            },
+            "+=2"
+          )
+          .set(".img-slider-item.next._5", { zIndex: 13 })
+          .to(
+            ".img-slider-item.next._5",
+            {
+              yPercent: -100,
+              duration: 8,
+              ease: "power2.inOut",
+            },
+            "+=2"
+          )
+          .set(".img-slider-item.next._6", { zIndex: 14 })
+          .to(
+            ".img-slider-item.next._6",
+            {
+              yPercent: -100,
+              duration: 8,
+              ease: "power2.inOut",
             },
             "+=2"
           );

@@ -435,7 +435,6 @@
   line-height: 22px;
   letter-spacing: -0.36px;
   text-align: right;
-  margin-bottom: 30vw;
 }
 
 .pj1_skill_desc1,
@@ -491,7 +490,7 @@
 
 .img-slider-item.next {
   top: 100%;
-  /* 처음에 보이지 않도록 설정 */
+  height: 100vh;
   bottom: auto;
   left: 0%;
   right: 0%;
@@ -507,9 +506,11 @@
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   vertical-align: middle;
   display: inline-block;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 1920px) {
