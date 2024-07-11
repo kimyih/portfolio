@@ -1,251 +1,323 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <link rel="stylesheet" href="./assets/css/test.css" />
+    <link rel="stylesheet" href="./assets/css/font.css" />
+    <link rel="stylesheet" href="./assets/script/lenis.js" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>portfolio</title>
-  <link rel="stylesheet" href="./assets/css/test.css" />
-  <link rel="stylesheet" href="./assets/css/font.css" />
-  <link rel="stylesheet" href="./assets/script/lenis.js" />
+    <!-- GSAP 라이브러리 추가 -->
+    <link rel="preconnect" href="//fdn.fontcdn.ir" />
+    <link rel="preconnect" href="//v1.fontapi.ir" />
+    <link href="https://v1.fontapi.ir/css/SFProDisplay" rel="stylesheet" />
 
-  <!-- GSAP 라이브러리 추가 -->
-  <link rel="preconnect" href="//fdn.fontcdn.ir" />
-  <link rel="preconnect" href="//v1.fontapi.ir" />
-  <link href="https://v1.fontapi.ir/css/SFProDisplay" rel="stylesheet" />
+    <style>
+      .scroll-anim-wrapper {
+        height: 1000vh;
+        overflow: hidden;
+      }
 
-  <style>
-    .scroll-anim-wrapper {
-      height: 1000vh;
-      overflow: hidden;
-    }
+      .second_section {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+      }
 
-    .second_section {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
+      .intro_text {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.5s ease-out;
+      }
 
-    .intro_text {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.5s ease-out;
-    }
+      .intro_text.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
 
-    .intro_text.on {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-
-<body>
-  <div id="wrap">
-    <header id="header">
-      <ul>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">PORTFOLIO / ABOUT ME</a></li>
-        <li><a href="#">Today is Hot 09:02:31</a></li>
-      </ul>
-    </header>
-    <div class="wrap_container">
-      <div class="first_section">
-        <div class="first_animation">
-          <div class="anibox1"></div>
-          <div class="anibox2"></div>
-          <div class="anibox3"></div>
-          <div class="anibox4"></div>
-          <div class="anibox5"></div>
-          <div class="anibox6"></div>
-          <div class="anibox7"></div>
-        </div>
-        <div class="first_top_wrap">
-          <div class="first_top_line1"></div>
-          <div class="first_top_line2"></div>
-        </div>
-        <div class="first_bottom_wrap">
-          <nav class="nav">
-            <ul>
-              <li><a href="#">AI Modernism of Kharvie</a></li>
-              <li><a href="#">PORTFOLIO / ABOUT ME</a></li>
-              <li><a href="#">Today is Hot 09:02:31</a></li>
-            </ul>
-          </nav>
-          <div class="cursor"></div>
-          <div class="bottom_wrap">
-            <span class="introduction" id="intro_text">
-              <span class="intro_text">Hello, I am Kim Yihyun, born with the unique</span>
-              <img src="./assets/img/intro1.png" alt=" Code" class="inline-image intro1" />
-              <span class="intro_text"> binary number 001010. With a </span>
-              <img src="./assets/img/intro2.png" alt="" class="inline-image intro2" />
-              <span class="intro_text">passion for coding</span>
-              <img src="./assets/img/intro3.png" alt="" class="inline-image intro3" />
-              <span class="intro_text">
-                and creativity, I aim to provide uniq</span>
-              <img src="./assets/img/intro4.png" alt="" class="inline-image intro4" />
-              <span class="intro_text">ue and capt</span>
-              <img src="./assets/img/intro5.png" alt="" class="inline-image intro5" />
-              <span class="intro_text">ivating web ex </span>
-              <img src="./assets/img/intro8.png" alt=" Code" class="inline-image intro1" />
-              <span>periences where technology and art harmonize. I always enjoy
+  <body>
+    <div id="wrap">
+      <header id="header">
+        <ul>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">PORTFOLIO / ABOUT ME</a></li>
+          <li><a href="#">Today is Hot 09:02:31</a></li>
+        </ul>
+      </header>
+      <div class="wrap_container">
+        <div class="first_section">
+          <div class="first_animation">
+            <div class="anibox1"></div>
+            <div class="anibox2"></div>
+            <div class="anibox3"></div>
+            <div class="anibox4"></div>
+            <div class="anibox5"></div>
+            <div class="anibox6"></div>
+            <div class="anibox7"></div>
+          </div>
+          <div class="first_top_wrap">
+            <div class="first_top_line1"></div>
+            <div class="first_top_line2"></div>
+          </div>
+          <div class="first_bottom_wrap">
+            <nav class="nav">
+              <ul>
+                <li><a href="#">AI Modernism of Kharvie</a></li>
+                <li><a href="#">PORTFOLIO / ABOUT ME</a></li>
+                <li><a href="#">Today is Hot 09:02:31</a></li>
+              </ul>
+            </nav>
+            <div class="cursor"></div>
+            <div class="bottom_wrap">
+              <span class="introduction" id="intro_text">
+                <span class="intro_text"
+                  >Hello, I am Kim Yihyun, born with the unique</span
+                >
+                <img
+                  src="./assets/img/intro1.png"
+                  alt=" Code"
+                  class="inline-image intro1"
+                />
+                <span class="intro_text"> binary number 001010. With a </span>
+                <img
+                  src="./assets/img/intro2.png"
+                  alt=""
+                  class="inline-image intro2"
+                />
+                <span class="intro_text">passion for coding</span>
+                <img
+                  src="./assets/img/intro3.png"
+                  alt=""
+                  class="inline-image intro3"
+                />
+                <span class="intro_text">
+                  and creativity, I aim to provide uniq</span
+                >
+                <img
+                  src="./assets/img/intro4.png"
+                  alt=""
+                  class="inline-image intro4"
+                />
+                <span class="intro_text">ue and capt</span>
+                <img
+                  src="./assets/img/intro5.png"
+                  alt=""
+                  class="inline-image intro5"
+                />
+                <span class="intro_text">ivating web ex </span>
+                <img
+                  src="./assets/img/intro8.png"
+                  alt=" Code"
+                  class="inline-image intro1"
+                />
+                <span
+                  >periences where technology and art harmonize. I always enjoy
+                </span>
+                <img
+                  src="./assets/img/intro6.png"
+                  alt=""
+                  class="inline-image intro6"
+                />
+                <span class="intro_text"
+                  >new challenges and continuously grow, str</span
+                >
+                <img
+                  src="./assets/img/intro7.png"
+                  alt=""
+                  class="inline-image intro7"
+                />
+                <span class="intro_text"
+                  >iving to push the boundaries of web development. Thank
+                  you.</span
+                >
+                <div class="line__wrap">
+                  <div class="bottom_line1"></div>
+                  <div class="bottom_line2"></div>
+                  <div class="bottom_line3"></div>
+                  <div class="bottom_line4"></div>
+                </div>
               </span>
-              <img src="./assets/img/intro6.png" alt="" class="inline-image intro6" />
-              <span class="intro_text">new challenges and continuously grow, str</span>
-              <img src="./assets/img/intro7.png" alt="" class="inline-image intro7" />
-              <span class="intro_text">iving to push the boundaries of web development. Thank
-                you.</span>
-              <div class="line__wrap">
-                <div class="bottom_line1"></div>
-                <div class="bottom_line2"></div>
-                <div class="bottom_line3"></div>
-                <div class="bottom_line4"></div>
-              </div>
-            </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="anim_section"></div>
+        <div class="anim_section"></div>
 
-      <div class="scroll-anim-wrapper">
-        <div class="experiment-content-wrapper text">
-          <div class="second_section">
-            <div class="projecn1_left_wrap">
-              <div class="project1_title">
-                <div class="pr1_codepin">Codepin</div>
-                <div class="pr2_booking"></div>
-                <span class="pr1_project">PROJECT</span>
-              </div>
-              <div class="project1_line_wrap">
-                <div class="project1_line"></div>
-                <div class="project1_line_info">
-                  <div class="pj_line_title">Code View</div>
-                  <div class="pj_line_arrow">
-                    <img src="./assets/img/Arrow1.svg" alt="" />
+        <div class="scroll-anim-wrapper">
+          <div class="experiment-content-wrapper text">
+            <div class="second_section">
+              <div class="projecn1_left_wrap">
+                <div class="project1_title">
+                  <div class="pr1_codepin">Codepin</div>
+                  <div class="pr2_booking"></div>
+                  <span class="pr1_project">PROJECT</span>
+                </div>
+                <div class="project1_line_wrap">
+                  <div class="project1_line"></div>
+                  <div class="project1_line_info">
+                    <div class="pj_line_title">Code View</div>
+                    <div class="pj_line_arrow">
+                      <img src="./assets/img/Arrow1.svg" alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="project1_right_wrap">
-              <div class="pj1_skill">
-                <span class="pj1_skill_title">[SKILL]</span>
-                <span class="pj1_skill_desc1">MYSQL</span>
-                <span class="pj1_skill_desc2">Javascript</span>
-                <span class="pj1_skill_desc3">PHP</span>
+              <div class="project1_right_wrap">
+                <div class="pj1_skill">
+                  <span class="pj1_skill_title">[SKILL]</span>
+                  <span class="pj1_skill_desc1">MYSQL</span>
+                  <span class="pj1_skill_desc2">Javascript</span>
+                  <span class="pj1_skill_desc3">PHP</span>
+                </div>
+                <div class="pj1_desc">
+                  <span class="pj1_desc1">Codepin은 코드를 URL로 관리하고</span>
+                  <span class="pj1_desc2"
+                    >URL 입력 시 사이트 정보를 확인하며,</span
+                  >
+                  <span class="pj1_desc3"
+                    >유용한 코드를 공유하는 공간입니다.
+                  </span>
+                </div>
               </div>
-              <div class="pj1_desc">
-                <span class="pj1_desc1">Codepin은 코드를 URL로 관리하고</span>
-                <span class="pj1_desc2">URL 입력 시 사이트 정보를 확인하며,</span>
-                <span class="pj1_desc3">유용한 코드를 공유하는 공간입니다.
-                </span>
+              <div class="second_container">
+                <div class="projectimg_1">
+                  <img src="./assets/img/project1.png" alt="프로젝트1" />
+                </div>
+                <div class="projectimg_2">
+                  <img src="./assets/img/project2.png" alt="프로젝트2" />
+                </div>
+                <div class="projectimg_3">
+                  <img
+                    src="./assets/img/project3.png"
+                    id="triggerImage3"
+                    alt="프로젝트3"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="second_container">
-              <div class="projectimg_1">
-                <img src="./assets/img/project1.png" alt="프로젝트1" />
-              </div>
-              <div class="projectimg_2">
-                <img src="./assets/img/project2.png" alt="프로젝트2" />
-              </div>
-              <div class="projectimg_3">
-                <img src="./assets/img/project3.png" id="triggerImage3" alt="프로젝트3" />
-              </div>
-            </div>
-            <div class="img_slide">
-              <div class="img-slider-item next _2">
-                <img src="./assets/img/project2.png" id="big-photo-2" alt="프로젝트2" />
-              </div>
-              <div class="img-slider-item next _3">
-                <img src="./assets/img/project3.png" id="big-photo-3" alt="프로젝트3" />
-              </div>
-              <div class="img-slider-item next _4">
-                <img src="./assets/img/project4.png" id="big-photo-4" alt="프로젝트4" />
-              </div>
-              <div class="img-slider-item next _5">
-                <img src="./assets/img/project5.png" id="big-photo-5" alt="프로젝트5" />
-              </div>
-              <div class="img-slider-item next _6">
-                <img src="./assets/img/project6.png" id="big-photo-6" alt="프로젝트6" />
+              <div class="img_slide">
+                <div class="img-slider-item next _2">
+                  <img
+                    src="./assets/img/project2.png"
+                    id="big-photo-2"
+                    alt="프로젝트2"
+                  />
+                </div>
+                <div class="img-slider-item next _3">
+                  <img
+                    src="./assets/img/project3.png"
+                    id="big-photo-3"
+                    alt="프로젝트3"
+                  />
+                </div>
+                <div class="img-slider-item next _4">
+                  <img
+                    src="./assets/img/project4.png"
+                    id="big-photo-4"
+                    alt="프로젝트4"
+                  />
+                </div>
+                <div class="img-slider-item next _5">
+                  <img
+                    src="./assets/img/project5.png"
+                    id="big-photo-5"
+                    alt="프로젝트5"
+                  />
+                </div>
+                <div class="img-slider-item next _6">
+                  <img
+                    src="./assets/img/project6.png"
+                    id="big-photo-6"
+                    alt="프로젝트6"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- //second_section -->
+        <!-- //second_section -->
 
-      <div class="anim_section"></div>
+        <div class="anim_section"></div>
 
-      <div id="contack">
-        <div class="contack__wrap">
-          <div class="comment_aside">
-            <div class="comment_aside"></div>
-          </div>
-          <div class="cotack_box">
-            <div class="contack_text">
-              <span class="contack_text1">Contack</span>
-              <span class="contack_text2">Please</span>
-              <span class="contack_text3">wlsakf23@gmail.com</span>
+        <div id="contack">
+          <div class="contack__wrap">
+            <div class="comment_aside">
+              <div class="comment_aside"></div>
             </div>
-            <div class="comment_box"></div>
+            <div class="cotack_box">
+              <div class="contack_text">
+                <span class="contack_text1">Contack</span>
+                <span class="contack_text2">Please</span>
+                <span class="contack_text3">wlsakf23@gmail.com</span>
+              </div>
+              <div class="comment_box">
+                <div class="comment_wrap">
+                  <input
+                    class="comment_input"
+                    type="text"
+                    placeholder="여기에 댓글을 작성해주세요!"
+                  />
+                  <button class="comment_write">댓글쓰기</button>
+                </div>
+              </div>
+            </div>
+            <div class="cotack_right">
+              <div class="comment_right"></div>
+            </div>
           </div>
-          <div class="cotack_right">
-            <div class="comment_right"></div>
-          </div>
-
         </div>
       </div>
     </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-  <script src="./assets/script/animation1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <script src="./assets/script/animation1.js"></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const introduction = document.getElementById("intro_text");
+        const bottomWrap = document.querySelector(".bottom_wrap");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const introduction = document.getElementById("intro_text");
-      const bottomWrap = document.querySelector(".bottom_wrap");
+        function adjustHeight() {
+          const introHeight = introduction.offsetHeight;
+          bottomWrap.style.height = `${introHeight}px`;
+        }
 
-      function adjustHeight() {
-        const introHeight = introduction.offsetHeight;
-        bottomWrap.style.height = `${introHeight}px`;
-      }
+        adjustHeight();
+        window.addEventListener("resize", adjustHeight);
+      });
+    </script>
 
-      adjustHeight();
-      window.addEventListener("resize", adjustHeight);
-    });
-  </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cursor = document.querySelector(".cursor");
+        const bottomWrap = document.querySelector(".bottom_wrap");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const cursor = document.querySelector(".cursor");
-      const bottomWrap = document.querySelector(".bottom_wrap");
+        function updateCursorPosition(e) {
+          const scrollTop =
+            window.scrollY || document.documentElement.scrollTop;
+          const scrollLeft =
+            window.scrollX || document.documentElement.scrollLeft;
 
-      function updateCursorPosition(e) {
-        const scrollTop =
-          window.scrollY || document.documentElement.scrollTop;
-        const scrollLeft =
-          window.scrollX || document.documentElement.scrollLeft;
+          cursor.style.left = `${e.clientX + scrollLeft}px`;
+          cursor.style.top = `${e.clientY + scrollTop}px`;
+        }
 
-        cursor.style.left = `${e.clientX + scrollLeft}px`;
-        cursor.style.top = `${e.clientY + scrollTop}px`;
-      }
+        function handleMouseEnter() {
+          cursor.classList.add("visible");
+        }
 
-      function handleMouseEnter() {
-        cursor.classList.add("visible");
-      }
+        function handleMouseLeave() {
+          cursor.classList.remove("visible");
+        }
 
-      function handleMouseLeave() {
-        cursor.classList.remove("visible");
-      }
+        document.addEventListener("mousemove", updateCursorPosition);
 
-      document.addEventListener("mousemove", updateCursorPosition);
-
-      bottomWrap.addEventListener("mouseenter", handleMouseEnter);
-      bottomWrap.addEventListener("mouseleave", handleMouseLeave);
-    });
-  </script>
-</body>
-
+        bottomWrap.addEventListener("mouseenter", handleMouseEnter);
+        bottomWrap.addEventListener("mouseleave", handleMouseLeave);
+      });
+    </script>
+  </body>
 </html>

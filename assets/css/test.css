@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 #wrap {
   width: 100%;
   background-color: #e7e4df;
@@ -35,7 +33,7 @@ body::-webkit-scrollbar {
   height: 70vh;
 }
 
-#header>ul {
+#header > ul {
   list-style: none;
   display: flex;
   margin: 20px;
@@ -46,11 +44,11 @@ body::-webkit-scrollbar {
   border-bottom: 1px solid #000;
 }
 
-#header>ul>li {
+#header > ul > li {
   display: inline;
 }
 
-#header>ul>li>a {
+#header > ul > li > a {
   color: #000000;
   text-decoration: none;
   font-weight: 300;
@@ -116,7 +114,8 @@ body::-webkit-scrollbar {
   background-color: #e7e4df;
 }
 
-.first_top_wrap {}
+.first_top_wrap {
+}
 
 .first_top_line1 {
   width: 100%;
@@ -145,7 +144,7 @@ body::-webkit-scrollbar {
   border-bottom: 1px solid #000000;
 }
 
-.nav>ul {
+.nav > ul {
   position: absolute;
   list-style: none;
   display: flex;
@@ -157,11 +156,11 @@ body::-webkit-scrollbar {
   bottom: 0;
 }
 
-.nav>ul>li {
+.nav > ul > li {
   display: inline;
 }
 
-.nav>ul>li>a {
+.nav > ul > li > a {
   color: #000000;
   text-decoration: none;
   font-weight: 300;
@@ -195,8 +194,7 @@ body::-webkit-scrollbar {
   /* 기본적으로 숨김 */
   transition: opacity 0.3s, transform 0.3s;
   /* 트랜지션 추가 */
-  transform: translate(-50%,
-      -320%);
+  transform: translate(-50%, -320%);
   /* 커서를 마우스 포인터에 맞추기 위해 추가 */
 }
 
@@ -273,7 +271,7 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
-.intro_text>h1,
+.intro_text > h1,
 .intro_text p {
   position: relative;
 }
@@ -599,7 +597,7 @@ body::-webkit-scrollbar {
 
     .comment_aside {
       width: 100%;
-      background-color: #E3E0DB;
+      background-color: #e3e0db;
       height: 4vw;
       display: flex;
       bottom: 0;
@@ -618,39 +616,74 @@ body::-webkit-scrollbar {
       width: 100%;
       display: flex;
       flex-direction: column;
-      font-family: 'San Francisco';
+      font-family: "San Francisco";
       font-weight: 100;
       margin-left: 2.5vw;
       margin-top: 3vw;
+      font-family: "SF Pro Display";
 
       .contack_text1 {
         font-size: 7vw;
         color: #ffff;
         line-height: 86%;
+        font-family: "SF Pro Display";
       }
 
       .contack_text2 {
         font-size: 7vw;
         color: #ffff;
         line-height: 86%;
+        font-family: "SF Pro Display";
       }
 
       .contack_text3 {
         font-size: 1vw;
         color: #ffff;
         line-height: 86%;
-        margin-top: 1.8vw;
+        margin-top: 1vw;
+        font-family: "SF Pro Display";
       }
     }
 
     .comment_box {
       width: 100%;
-      background-color: #E3E0DB;
+      background-color: #e3e0db;
       height: 4vw;
       display: flex;
       bottom: 0;
       position: absolute;
       margin-bottom: 8vw;
+
+      .comment_wrap {
+        width: 100%;
+        border: 1px solid #000;
+        position: absolute;
+        display: flex;
+        height: 41px;
+        justify-content: center;
+        align-self: center;
+
+        .comment_input {
+          width: 88%;
+          height: 100%;
+          background-color: #e3e0db;
+          border: 0;
+
+          &::placeholder {
+            padding: 10px;
+          }
+        }
+
+        .comment_write {
+          width: 12%;
+          height: 94%;
+          background-color: #000;
+          color: #ffff;
+          border: 0;
+          align-self: center;
+          margin-right: 1px;
+        }
+      }
     }
   }
 
@@ -661,7 +694,7 @@ body::-webkit-scrollbar {
 
     .comment_right {
       width: 100%;
-      background-color: #E3E0DB;
+      background-color: #e3e0db;
       height: 4vw;
       display: flex;
       bottom: 0;
