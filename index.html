@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <style>
+      .textClip {
+        position: absolute;
+        font-size: 2rem;
+        opacity: 0;
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="section1">
+      <div class="textWrap">
+        <div class="textClip t1">i</div>
+        <div class="textClip t2">i</div>
+        <div class="textClip t3">n</div>
+        <div class="textClip t4">i</div>
+        <div class="textClip t5">i</div>
+        <span class="line"></span>
+        <div class="bg"></div>
+      </div>
+    </div>
+    <!-- //section1 -->
+
+    <div id="section2"></div>
+    <div id="section3"></div>
+    <div id="section4"></div>
+    <div id="section5"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+    <script src="./assets/script/sectionani.js"></script>
+  </body>
+</html>
