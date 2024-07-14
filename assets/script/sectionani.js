@@ -23,7 +23,7 @@ setTimeout(() => {
   // 글자 위치 설정
   gsap.set(".textClip.t1", { left: "10vw", autoAlpha: 0 });
   gsap.set(".textClip.t2", { left: "90vw", autoAlpha: 0 });
-  gsap.set(".textClip.t3", { left: "50%", xPercent: -50, autoAlpha: 0 });
+  gsap.set(".textClip.t3", { left: "50%", autoAlpha: 0 });
   gsap.set(".textClip.t4", { left: "19vw", autoAlpha: 0 });
   gsap.set(".textClip.t5", { left: "81vw", autoAlpha: 0 });
 
@@ -85,7 +85,16 @@ setTimeout(() => {
 }, 2000);
 
 const ani1 = gsap.timeline();
-ani1.to(".textClip.t3", { scale: 10, duration: 5 }, "b");
+ani1.to(
+  ".textClip.t3",
+  {
+    scale: 10,
+    duration: 5,
+    backgroundSize: "fixed", // 배경 크기를 10배로 확대
+    backgroundPosition: "center center", // 배경 위치 유지
+  },
+  "b"
+);
 ani1.to(".bg", { duration: 3.5, opacity: 1 }, "b");
 ani1.to(
   ".textClip.t1",
@@ -144,3 +153,52 @@ ScrollTrigger.create({
   anticipatePin: 1,
   markers: true,
 });
+
+// section1 ,2 사이 그라데이션
+
+gsap.registerPlugin(ScrollTrigger);
+
+// 그라데이션 애니메이션
+gsap.to(".background-gradient", {
+  scaleY: 1,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".gradient-section",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+// 헤더가 네비에 닿으면 내려오는
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: ".nav",
+  start: "bottom top",
+  end: "bottom top",
+  onEnter: () => showHeader(),
+  onLeaveBack: () => hideHeader(),
+  scrub: true, // 스크롤과 함께 애니메이션이 자연스럽게 되도록 설정
+  markers: true,
+});
+
+function showHeader() {
+  gsap.to("#header", {
+    top: 0,
+    opacity: 1,
+    display: "flex",
+    ease: "power1.out",
+    duration: 0.5,
+  });
+}
+
+function hideHeader() {
+  gsap.to("#header", {
+    top: 0,
+    opacity: 0,
+    display: "none",
+    ease: "power1.out",
+    duration: 0.5,
+  });
+}
