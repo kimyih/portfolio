@@ -21,11 +21,11 @@ setTimeout(() => {
   const t3Interval = changeText(".textClip.t3", t3Text);
 
   // 글자 위치 설정
-  gsap.set(".textClip.t1", { left: "10vw", autoAlpha: 0 });
-  gsap.set(".textClip.t2", { left: "90vw", autoAlpha: 0 });
+  gsap.set(".textClip.t1", { left: "12.5vw", autoAlpha: 0 });
+  gsap.set(".textClip.t2", { left: "87.5vw", autoAlpha: 0 });
   gsap.set(".textClip.t3", { left: "50%", autoAlpha: 0 });
-  gsap.set(".textClip.t4", { left: "19vw", autoAlpha: 0 });
-  gsap.set(".textClip.t5", { left: "81vw", autoAlpha: 0 });
+  gsap.set(".textClip.t4", { left: "21vw", autoAlpha: 0 });
+  gsap.set(".textClip.t5", { left: "79vw", autoAlpha: 0 });
 
   // 애니메이션
   let tl = gsap.timeline();
@@ -134,12 +134,12 @@ ani1.to(".textClip.t4", { duration: 1, scale: 0.59, ease: "power1.out" }, "t1");
 ani1.to(".textClip.t5", { duration: 1, scale: 0.59, ease: "power1.out" }, "t1");
 ani1.to(
   ".textClip.t4",
-  { duration: 1, rotationZ: -45, ease: "power1.out" },
+  { duration: 1, rotationZ: 45, ease: "power1.out" },
   "t2"
 );
 ani1.to(
   ".textClip.t5",
-  { duration: 1, rotationZ: 45, ease: "power1.out" },
+  { duration: 1, rotationZ: -45, ease: "power1.out" },
   "t2"
 );
 
