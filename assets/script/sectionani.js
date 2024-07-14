@@ -82,7 +82,7 @@ setTimeout(() => {
       }
     );
   });
-}, 2000);
+}, 4000);
 
 const ani1 = gsap.timeline();
 ani1.to(
@@ -90,7 +90,7 @@ ani1.to(
   {
     scale: 10,
     duration: 5,
-    backgroundSize: "fixed", // 배경 크기를 10배로 확대
+    backgroundSize: "cover", // 배경 크기를 10배로 확대
     backgroundPosition: "center center", // 배경 위치 유지
   },
   "b"

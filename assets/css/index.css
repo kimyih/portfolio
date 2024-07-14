@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .wrap {
@@ -406,7 +407,7 @@ body::-webkit-scrollbar {
 .pr1_codepin,
 .pr2_booking {
   font-size: 10vw;
-  font-family: "SF Pro Display";
+  font-family: "sf pro display";
   font-weight: 30;
   line-height: 86%;
 }
@@ -434,6 +435,7 @@ body::-webkit-scrollbar {
   display: flex;
   justify-content: space-between;
   margin-top: 6px;
+  cursor: pointer;
 }
 
 .pj_line_title {
@@ -588,4 +590,134 @@ body::-webkit-scrollbar {
   gap: 1%;
   z-index: 4;
   position: absolute;
+}
+
+/* 컨택 */
+
+#contack {
+  width: 100%;
+  height: 100vh;
+}
+
+.contack__wrap {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/contact.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+
+  .comment_aside {
+    width: 30%;
+    height: 100%;
+    position: relative;
+
+    .comment_aside {
+      width: 100%;
+      background-color: #e3e0db;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+    }
+  }
+
+  .cotack_box {
+    width: 48%;
+    background-color: #000000;
+    height: 100vh;
+    position: relative;
+
+    .contack_text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: "San Francisco";
+      font-weight: 100;
+      margin-left: 2.5vw;
+      margin-top: 3vw;
+      font-family: "SF Pro Display";
+
+      .contack_text1 {
+        font-size: 7vw;
+        color: #ffff;
+        line-height: 86%;
+        font-family: "SF Pro Display";
+      }
+
+      .contack_text2 {
+        font-size: 7vw;
+        color: #ffff;
+        line-height: 86%;
+        font-family: "SF Pro Display";
+      }
+
+      .contack_text3 {
+        font-size: 1vw;
+        color: #ffff;
+        line-height: 86%;
+        margin-top: 1vw;
+        font-family: "SF Pro Display";
+      }
+    }
+
+    .comment_box {
+      width: 100%;
+      background-color: #e3e0db;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+
+      .comment_wrap {
+        width: 100%;
+        border: 1px solid #000;
+        position: absolute;
+        display: flex;
+        height: 41px;
+        justify-content: center;
+        align-self: center;
+
+        .comment_input {
+          width: 88%;
+          height: 100%;
+          background-color: #e3e0db;
+          border: 0;
+
+          &::placeholder {
+            padding: 10px;
+          }
+        }
+
+        .comment_write {
+          width: 12%;
+          height: 94%;
+          background-color: #000;
+          color: #ffff;
+          border: 0;
+          align-self: center;
+          margin-right: 1px;
+        }
+      }
+    }
+  }
+
+  .cotack_right {
+    width: 22%;
+    height: 100vh;
+    position: relative;
+
+    .comment_right {
+      width: 100%;
+      background-color: #e3e0db;
+      height: 4vw;
+      display: flex;
+      bottom: 0;
+      position: absolute;
+      margin-bottom: 8vw;
+    }
+  }
 }
