@@ -202,3 +202,78 @@ function hideHeader() {
     duration: 0.5,
   });
 }
+
+// 이미지 애니메이션 설정
+const images = document.querySelectorAll(".second_container img");
+
+images.forEach((img, i) => {
+  gsap.fromTo(
+    img,
+    { y: 0 + i * 600, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 8,
+      scrollTrigger: {
+        trigger: ".second_section",
+        start: "top center+=100",
+        end: "top top",
+        scrub: 1,
+      },
+      delay: i * 2,
+    }
+  );
+});
+
+// 메인 타임라인 설정
+const tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".second_section",
+    start: "top top",
+    end: "bottom+=800% top",
+    scrub: 1,
+    pin: true,
+    pinSpacing: true,
+    markers: true,
+  },
+});
+
+// 이미지들을 오른쪽으로 이동하는 애니메이션
+tl.to(".projectimg_1 img", {
+  x: "206.2%",
+  duration: 20,
+  ease: "power1.inOut",
+})
+  .to(
+    ".projectimg_2 img",
+    {
+      x: "103.1%",
+      duration: 20,
+      ease: "power1.inOut",
+    },
+    "<"
+  )
+  .fromTo(
+    ".projecn1_left_wrap",
+    { display: "none", opacity: 0 },
+    {
+      display: "block",
+      opacity: 1,
+      duration: 20,
+      ease: "power1.inOut",
+      onStart: () => gsap.set(".projecn1_left_wrap", { display: "block" }),
+    },
+    "<"
+  )
+  .fromTo(
+    ".project1_right_wrap",
+    { display: "none", opacity: 0 },
+    {
+      display: "block",
+      opacity: 1,
+      duration: 20,
+      ease: "power1.inOut",
+      onStart: () => gsap.set(".project1_right_wrap", { display: "block" }),
+    },
+    "<"
+  );
