@@ -66,6 +66,7 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  overflow: hidden;
 }
 
 #section1 .textWrap {
@@ -216,7 +217,6 @@ body::-webkit-scrollbar {
   width: 100%;
   /* border-bottom: 1px solid #000; */
   position: relative;
-  cursor: none;
 }
 
 .bottom_line1 {
@@ -248,6 +248,8 @@ body::-webkit-scrollbar {
   width: 100%;
   height: 100%;
   display: flex;
+  opacity: 1;
+  transform: none;
 }
 
 .introduction {
@@ -259,7 +261,7 @@ body::-webkit-scrollbar {
   text-align: justify;
   text-transform: uppercase;
   letter-spacing: 0px;
-  z-index: 2;
+  z-index: 3;
   font-family: "San Francisco";
   padding-top: 2.5vw;
   border-bottom: 1px solid #000;
@@ -278,6 +280,23 @@ body::-webkit-scrollbar {
 .intro_text {
   position: relative;
   overflow: hidden;
+}
+
+.introduction-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-line {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.intro-line > * {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
 }
 
 .intro_text > h1,
@@ -306,10 +325,10 @@ body::-webkit-scrollbar {
 
 .introduction span,
 .introduction img {
-  vertical-align: middle;
-  /* 중간 정렬 */
-  margin: 0 5px;
-  /* 요소들 사이의 여백 */
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(20px);
+  will-change: transform, opacity;
 }
 
 .introduction img {

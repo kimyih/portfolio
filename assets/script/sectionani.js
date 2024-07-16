@@ -57,8 +57,9 @@ setTimeout(() => {
     // t1에서 t4로 'I' 복사 및 이동 애니메이션
     gsap.fromTo(
       ".textClip.t4",
-      { left: "10vw", autoAlpha: 0 },
+      { left: "12.5vw", autoAlpha: 0 },
       {
+        delay: 0.3,
         duration: 1,
         left: "19vw",
         autoAlpha: 1,
@@ -71,8 +72,9 @@ setTimeout(() => {
     // t2에서 t5로 'I' 복사 및 이동 애니메이션
     gsap.fromTo(
       ".textClip.t5",
-      { left: "90vw", autoAlpha: 0 },
+      { left: "87vw", autoAlpha: 0 },
       {
+        delay: 0.3,
         duration: 1,
         left: "81vw",
         autoAlpha: 1,
@@ -90,11 +92,18 @@ ani1.to(
   {
     scale: 10,
     duration: 5,
-    backgroundSize: "cover", // 배경 크기를 10배로 확대
-    backgroundPosition: "center center", // 배경 위치 유지
+    onUpdate: function () {
+      const progress = this.progress();
+      const scale = 1 + 9 * progress; // 1에서 10까지 스케일
+      gsap.set(".textClip.t3", {
+        backgroundSize: `${100 / scale}vw auto`,
+        backgroundPosition: "center center",
+      });
+    },
   },
   "b"
 );
+
 ani1.to(".bg", { duration: 3.5, opacity: 1 }, "b");
 ani1.to(
   ".textClip.t1",
@@ -202,6 +211,36 @@ function hideHeader() {
     duration: 0.5,
   });
 }
+
+gsap.registerPlugin(ScrollTrigger);
+
+const introLines = gsap.utils.toArray(".intro-line");
+
+introLines.forEach((line, index) => {
+  gsap.fromTo(
+    line.children,
+    {
+      y: "100%",
+    },
+    {
+      y: "0%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: line,
+        start: "top bottom-=50",
+        end: "top center",
+        scrub: 0.5,
+        markers: true,
+        opacity: 1, // 개발 중 시각적 마커 표시 (나중에 제거)
+      },
+    }
+  );
+});
+
+// line__wrap은 애니메이션에서 제외
+gsap.set(".line__wrap", { opacity: 1, y: 0 });
+// line__wrap은 애니메이션에서 제외
+gsap.set(".line__wrap", { opacity: 1, y: 0 });
 
 // 이미지 애니메이션 설정
 const images = document.querySelectorAll(".second_container img");
