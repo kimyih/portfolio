@@ -179,38 +179,44 @@ gsap.to(".background-gradient", {
   },
 });
 
-// 헤더가 네비에 닿으면 내려오는
-// gsap.registerPlugin(ScrollTrigger);
+// GSAP 및 ScrollTrigger 플러그인 등록
+gsap.registerPlugin(ScrollTrigger);
 
-// ScrollTrigger.create({
-//   trigger: ".nav",
-//   start: "bottom top",
-//   end: "bottom top",
-//   onEnter: () => showHeader(),
-//   onLeaveBack: () => hideHeader(),
-//   scrub: true, // 스크롤과 함께 애니메이션이 자연스럽게 되도록 설정
-//   markers: true,
-// });
+// ScrollTrigger 설정
+ScrollTrigger.create({
+  trigger: ".nav",
+  start: "top top",
+  end: "bottom top",
+  onEnter: () => showHeader(),
+  onLeaveBack: () => hideHeader(),
+  scrub: true, // 스크롤과 함께 애니메이션이 자연스럽게 되도록 설정
+  markers: true,
+});
 
-// function showHeader() {
-//   gsap.to("#header", {
-//     top: 0,
-//     opacity: 1,
-//     display: "flex",
-//     ease: "power1.out",
-//     duration: 0.5,
-//   });
-// }
+// 헤더 나타나는 애니메이션
+function showHeader() {
+  gsap.to("#header", {
+    top: 0, // 헤더를 화면 상단에 위치시킴
+    opacity: 1,
+    display: "flex",
+    ease: "power1.out",
+    duration: 0.5,
+  });
+}
 
-// function hideHeader() {
-//   gsap.to("#header", {
-//     top: 0,
-//     opacity: 0,
-//     display: "none",
-//     ease: "power1.out",
-//     duration: 0.5,
-//   });
-// }
+// 헤더 사라지는 애니메이션
+function hideHeader() {
+  gsap.to("#header", {
+    top: -100, // 헤더를 화면 위쪽으로 이동
+    opacity: 0,
+    display: "none",
+    ease: "power1.out",
+    duration: 0.5,
+  });
+}
+
+// 초기 헤더 위치 설정
+gsap.set("#header", { top: -100 });
 
 gsap.registerPlugin(ScrollTrigger);
 
