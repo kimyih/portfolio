@@ -692,3 +692,151 @@ body::-webkit-scrollbar {
     }
   }
 }
+
+/* port_1 */
+
+#port_1 {
+  background-color: #e7e4df;
+  width: 100%;
+  height: 100vh;
+}
+
+#port_1 .top {
+  width: 100%;
+  height: 50vh;
+  background-color: #cccccc4d;
+  overflow: hidden;
+  position: relative;
+}
+
+#port_1 .top span.bo {
+  width: 100%;
+  height: 140px;
+  background-color: #11111131;
+  backdrop-filter: blur(10px);
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#port_1 .top span.to {
+  width: 100%;
+  height: 140px;
+  background-color: #11111131;
+  backdrop-filter: blur(10px);
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#port_1 .top h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17vw;
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-family: "NeoGeoTrial-Black";
+  color: #111;
+}
+
+#port_1 .bom {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #000;
+}
+
+#port_1 .bom .title {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  height: 4vh;
+  font-family: "Abel";
+  display: flex;
+  align-items: end;
+  font-size: 14px;
+  padding: 1px 5px;
+  z-index: 10000;
+  background-color: #e7e4df;
+}
+#port_1 .bom .title span {
+  flex: 1;
+  text-align: center;
+}
+#port_1 .bom .title span:first-child {
+  text-align: left;
+}
+#port_1 .bom .title span:last-child {
+  text-align: right;
+}
+
+#port_1 .bom .cont {
+  width: 100%;
+  height: 46vh;
+  display: flex;
+}
+
+#port_1 .bom .left {
+  width: 40%;
+  height: 100%;
+  border-right: 1px solid #000;
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  font-family: "NeoGeoTrial-Regular";
+  padding: 1%;
+}
+#port_1 .bom .left h3 {
+  padding-right: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #222;
+}
+#port_1 .bom .left li {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #666;
+}
+#port_1 .bom .right {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1%;
+  font-size: 6vw;
+  line-height: 1;
+  font-family: "NeoGeoTrial-Light";
+}
+
+/*about_info*/
+
+.about_info {
+  width: 100%;
+  height: calc(100vh - 44px);
+  background-color: #e7e4df;
+  border-bottom: 1px solid #202020;
+
+  .about_info_wrap {
+    padding: 0px 20px 0px 20px;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+
+    .ainfo_1 {
+      font-size: 12vw;
+      color: #202020;
+      line-height: 86%;
+    }
+
+    .ainfo_2 {
+      font-size: 12vw;
+      color: #202020;
+      line-height: 86%;
+    }
+  }
+}

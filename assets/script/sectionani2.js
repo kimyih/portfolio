@@ -286,14 +286,14 @@ const tl = gsap.timeline({
 // 이미지들을 오른쪽으로 이동하는 애니메이션
 tl.to(".projectimg_1 img", {
   x: "206.2%",
-  duration: 20,
+  duration: 10,
   ease: "power1.inOut",
 })
   .to(
     ".projectimg_2 img",
     {
       x: "103.1%",
-      duration: 20,
+      duration: 10,
       ease: "power1.inOut",
     },
     "<"
@@ -304,7 +304,7 @@ tl.to(".projectimg_1 img", {
     {
       display: "block",
       opacity: 1,
-      duration: 20,
+      duration: 10,
       ease: "power1.inOut",
       onStart: () => gsap.set(".projecn1_left_wrap", { display: "block" }),
     },
@@ -316,9 +316,21 @@ tl.to(".projectimg_1 img", {
     {
       display: "block",
       opacity: 1,
-      duration: 20,
+      duration: 15,
       ease: "power1.inOut",
       onStart: () => gsap.set(".project1_right_wrap", { display: "block" }),
     },
     "<"
   );
+
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+  trigger: "#port_1 .bom",
+  start: "top top",
+  endTrigger: "html", // 문서의 끝까지 스크롤할 때까지 고정
+  end: "bottom bottom",
+  pin: "#port_1 .bom .title",
+  pinSpacing: false,
+  pinType: "fixed", // 고정 타입을 'fixed'로 설정
+});
