@@ -27,7 +27,7 @@ introLines.forEach((line, index) => {
       scrollTrigger: {
         trigger: line,
         start: "top bottom-=50",
-        end: "bottom bottom",
+        end: "top center",
         scrub: 1,
         markers: true,
         opacity: 1, // 개발 중 시각적 마커 표시 (나중에 제거)
