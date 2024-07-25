@@ -132,7 +132,6 @@ body::-webkit-scrollbar {
 
   .about_info_wrap {
     padding: 0px 20px 0px 20px;
-
     width: 100%;
     padding-top: 60px;
 
@@ -144,6 +143,7 @@ body::-webkit-scrollbar {
         font-size: 12vw;
         color: #202020;
         line-height: 86%;
+        font-family: "NeoGeoTrial-Light";
       }
 
       .ainfo_2 {
@@ -171,6 +171,7 @@ body::-webkit-scrollbar {
     line-height: 86%;
     position: relative;
     overflow: hidden;
+    padding-bottom: 25px;
   }
 }
 
@@ -388,6 +389,358 @@ body::-webkit-scrollbar {
   margin-top: 10px;
 }
 
+/* section2 */
+
 #section2 {
   height: 2000px;
+  background-color: #e7e4df;
+}
+
+#section2 .title {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  height: 44px;
+  font-family: "Abel";
+  display: flex;
+  align-items: end;
+  font-size: 14px;
+  padding: 1px 5px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: #e7e4df;
+}
+#section2 .title span {
+  flex: 1;
+  text-align: center;
+}
+#section2 .title span:first-child {
+  text-align: left;
+}
+#section2 .title span:last-child {
+  text-align: right;
+}
+
+/*  */
+
+/* anim_section */
+
+.anim_section {
+  height: 66vh;
+
+  .anim_section_wrap {
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    padding-top: 60px;
+  }
+}
+
+#section2 .cont {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+}
+
+#section2 .left {
+  width: 30%;
+  height: 100%;
+  /* border-right: 1px solid #000; */
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  font-family: "NeoGeoTrial-Regular";
+  padding: 1%;
+}
+#section2 .left h3 {
+  padding-right: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #222;
+}
+#section2 .left li {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #666;
+}
+#section2 .right {
+  width: 70%;
+  padding: 5% 2%;
+  font-family: "NeoGeoTrial-Light";
+}
+#section2 .right > ul {
+}
+#section2 .right > ul > li {
+  border-top: 1px solid #000;
+  margin-top: 3px;
+}
+
+#section2 .right > ul > li span {
+  margin-top: 30px;
+}
+
+#section2 .right > ul > li > ul {
+  text-align: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: -20px;
+}
+
+#section2 .right > ul > li > ul > li {
+  border-top: 1px solid #000;
+  padding: 4px 0;
+  color: #888;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    color: #e7e4df;
+    display: flex;
+    align-items: center;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
+  }
+}
+#section2 .right > ul > li > ul > li:first-child {
+  border-top: 0;
+}
+
+#section2 .scroll-anim-wrapper {
+  position: relative;
+}
+
+.scroll-anim-wrapper.overflow-clip {
+  height: 1000vh;
+}
+
+.overflow-clip {
+  overflow: clip;
+}
+
+#section2 .scroll-anim-wrapper .experiment-content-wrapper text {
+  padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.second_section {
+  display: flex;
+  gap: 1%;
+  height: 100vh;
+  position: sticky;
+  /* 여기를 수정 */
+  top: 0;
+  /* 섹션이 상단에 고정될 위치 지정 */
+  z-index: 10;
+  /* 다른 요소들 위에 올라오도록 z-index 조정 */
+  background-color: #e7e4df;
+}
+
+.project_left_wrap {
+  width: 50%;
+  height: 100vh;
+  display: none;
+  opacity: 0;
+  z-index: 2;
+  padding-left: 20px;
+}
+
+.project_title {
+  width: 100%;
+  margin-top: 44px;
+  position: sticky;
+  font-weight: 30;
+}
+
+.pr1_codepin,
+.pr2_booking {
+  font-size: 10vw;
+  font-weight: 30;
+  line-height: 86%;
+}
+
+.pr1_project {
+  font-size: 10vw;
+  font-weight: 30;
+  line-height: 94%;
+}
+
+/* project1_line_wrap */
+
+.project1_line_wrap {
+  width: 100%;
+  margin-top: 2.3vw;
+
+  .project1_line {
+    width: 34vw;
+    height: 1px;
+    background-color: #000;
+  }
+
+  .project1_line_info {
+    width: 34vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    cursor: pointer;
+
+    .pj_line_title {
+      font-size: 1vw;
+      font-family: "Roboto";
+      font-weight: normal;
+      letter-spacing: -0.36px;
+      line-height: 22px;
+      text-transform: uppercase;
+    }
+
+    .pj_line_arrow img {
+      line-height: 22px;
+    }
+  }
+}
+
+/* project1_right_wrap */
+
+.project1_right_wrap {
+  width: 16.7777%;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  display: none;
+
+  .pj1_skill {
+    display: flex;
+    flex-direction: column;
+    margin-top: 35vw;
+
+    .pj1_skill_title {
+      font-size: 1vw;
+      color: #000;
+      line-height: 22px;
+      letter-spacing: -0.36px;
+      text-align: right;
+    }
+
+    .pj1_skill_desc1,
+    .pj1_skill_desc2,
+    .pj1_skill_desc3 {
+      opacity: 0.4;
+      text-align: right;
+      letter-spacing: -2%;
+      line-height: 21px;
+    }
+  }
+
+  .pj1_desc {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    font-family: "nanumSquareNeo";
+    line-height: 150%;
+    font-size: 1vw;
+  }
+}
+
+/*  */
+
+.second_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1%;
+  z-index: 4;
+  position: absolute;
+
+  .projectimg_1,
+  .projectimg_2,
+  .projectimg_3 {
+    width: 33.3333%;
+    margin-top: 2vw;
+    height: 100vh;
+  }
+
+  .projectimg_1 img,
+  .projectimg_2 img,
+  .projectimg_3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projectimg_1 {
+    z-index: 3;
+  }
+
+  .projectimg_2 {
+    z-index: 2;
+  }
+}
+
+/* img_slide */
+.img_slide {
+  width: 33.333%;
+  height: 100vh;
+  position: sticky;
+  /* sticky 포지션 적용 */
+  top: 0px;
+  /* 상단에 고정될 위치 설정 */
+  display: flex;
+  flex-direction: column;
+  z-index: 6;
+
+  img {
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.img-slider-item {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+  position: absolute;
+}
+
+.img-slider-item.next {
+  top: 100%;
+  height: 100vh;
+  bottom: auto;
+  left: 0%;
+  right: 0%;
+  z-index: 1;
+}
+
+.big-scroll-img {
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
 }
