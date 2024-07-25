@@ -87,14 +87,14 @@ tl.to(".projectimg_1 img", {
     "<"
   )
   .fromTo(
-    ".projecn1_left_wrap",
+    ".project_left_wrap",
     { display: "none", opacity: 0 },
     {
       display: "block",
       opacity: 1,
       duration: 10,
       ease: "power1.inOut",
-      onStart: () => gsap.set(".projecn1_left_wrap", { display: "block" }),
+      onStart: () => gsap.set(".project_left_wrap", { display: "block" }),
     },
     "<"
   )

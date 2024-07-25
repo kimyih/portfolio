@@ -190,7 +190,7 @@ body::-webkit-scrollbar {
 /* contens */
 
 #contens {
-  height: 1000px;
+  height: 1100px;
   background-color: #e7e4df;
   border-bottom: 1px solid #202020;
 }
@@ -601,13 +601,19 @@ body::-webkit-scrollbar {
     margin-top: 6px;
     cursor: pointer;
 
-    .pj_line_title {
+    .pj_line_title,
+    .pj_line_site {
       font-size: 1vw;
       font-family: "Roboto";
       font-weight: normal;
       letter-spacing: -0.36px;
       line-height: 22px;
       text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     .pj_line_arrow img {
@@ -666,6 +672,11 @@ body::-webkit-scrollbar {
 }
 
 /*  */
+
+.projectimg_1 .img_codepin:hover {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
 .second_container {
   width: 100%;
