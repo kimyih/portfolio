@@ -87,14 +87,14 @@ tl.to(".projectimg_1 img", {
     "<"
   )
   .fromTo(
-    ".project_left_wrap",
+    ".projecn1_left_wrap",
     { display: "none", opacity: 0 },
     {
       display: "block",
       opacity: 1,
       duration: 10,
       ease: "power1.inOut",
-      onStart: () => gsap.set(".project_left_wrap", { display: "block" }),
+      onStart: () => gsap.set(".projecn1_left_wrap", { display: "block" }),
     },
     "<"
   )
@@ -110,3 +110,21 @@ tl.to(".projectimg_1 img", {
     },
     "<"
   );
+
+// 가로 스크롤
+
+gsap.registerPlugin(ScrollTrigger);
+
+let sections = gsap.utils.toArray("#class_project_wrap section");
+
+let scrollTween = gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#class_project_wrap",
+    pin: true,
+    scrub: 1, // 스크롤에 즉각적으로 반응하되 약간의 부드러움 유지
+    snap: false, // snap 기능 제거
+    end: () => "+=" + (sections.length - 1) * 100 + "%",
+  },
+});
