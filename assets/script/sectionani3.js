@@ -63,7 +63,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".second_section",
     start: "top top",
-    end: "bottom+=800% top",
+    end: "bottom+=700% top",
     scrub: 1,
     pin: true,
     pinSpacing: true,

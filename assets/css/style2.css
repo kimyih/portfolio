@@ -3,6 +3,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  overflow: hidden;
+}
+
 #index {
   background-color: #e7e4df;
   width: 100%;
@@ -356,6 +360,13 @@ body::-webkit-scrollbar {
   font-family: "NeoGeoTrial-Light";
 }
 
+#about_me .cont .right span {
+  line-height: 1.1;
+  background-color: linear-gradient(to top, #ccd0f0 50%, transparent 50%);
+  width: fit-content;
+  z-index: 1;
+}
+
 #about_me .cont .right div:nth-child(1),
 #about_me .cont .right div:nth-child(2) {
   font-weight: bold;
@@ -381,8 +392,10 @@ body::-webkit-scrollbar {
   letter-spacing: -0.02em;
 }
 
-#about_me .cont .right span {
+#about_me .cont .right em {
   color: rgb(252, 150, 47);
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: #000000;
 }
 
 #about_me .cont .right div:last-child {
@@ -581,6 +594,11 @@ scroll-anim-wrapper {
   background-color: #e7e4df;
 }
 
+.second_section:nth-child(2),
+.second_section:nth-child(3) {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
 .projecn1_left_wrap {
   width: 50%;
   height: 100vh;
@@ -607,7 +625,7 @@ scroll-anim-wrapper {
 .pr1_project {
   font-size: 10vw;
   font-weight: 30;
-  line-height: 94%;
+  line-height: 74%;
 }
 
 .project1_line_wrap {
@@ -789,6 +807,8 @@ scroll-anim-wrapper {
   display: flex;
   width: 300%;
   overflow-x: hidden;
+  z-index: 10;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 
   section {
     width: 100vw;
@@ -1073,20 +1093,20 @@ scroll-anim-wrapper {
       font-weight: 100;
       margin-left: 2.5vw;
       margin-top: 3vw;
-      font-family: "SF Pro Display";
+      font-family: "Bodoni Moda";
 
       .contack_text1 {
         font-size: 7vw;
         color: #ffff;
         line-height: 86%;
-        font-family: "SF Pro Display";
+        font-family: "Bodoni Moda";
       }
 
       .contack_text2 {
         font-size: 7vw;
         color: #ffff;
         line-height: 86%;
-        font-family: "SF Pro Display";
+        font-family: "Bodoni Moda";
       }
 
       .contack_text3 {
@@ -1094,7 +1114,12 @@ scroll-anim-wrapper {
         color: #ffff;
         line-height: 86%;
         margin-top: 1vw;
-        font-family: "SF Pro Display";
+        font-family: "Bodoni Moda";
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -1154,5 +1179,60 @@ scroll-anim-wrapper {
       position: absolute;
       margin-bottom: 8vw;
     }
+  }
+}
+
+/* footer */
+
+#footer {
+  background-color: #000;
+}
+
+.footer_wrap {
+  overflow: hidden; /* 애니메이션 요소들이 벗어났을 때 잘리도록 설정 */
+
+  /* .footer_line {
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 4vw;
+  } */
+
+  .footer_inner {
+    display: flex;
+    font-size: 10vw;
+    white-space: nowrap; /* 텍스트가 한 줄로 나타나도록 설정 */
+    animation: crawling-line 20s linear infinite;
+
+    span {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #fff;
+      color: transparent;
+      text-transform: uppercase;
+      line-height: 1.15;
+      padding: 4vw;
+    }
+
+    span:nth-child(1),
+    span:nth-child(5) {
+      font-family: "Merriweather";
+      font-weight: 500;
+    }
+
+    span:nth-child(3),
+    span:nth-child(7) {
+      font-family: "Bodoni Moda";
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes crawling-line {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
