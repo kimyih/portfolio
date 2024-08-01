@@ -361,9 +361,7 @@ body {
 }
 
 #about_me .cont .right span {
-  line-height: 1.1;
-  background-color: linear-gradient(to top, #ccd0f0 50%, transparent 50%);
-  width: fit-content;
+  line-height: 1.05;
   z-index: 1;
 }
 
@@ -391,6 +389,10 @@ body {
   justify-content: flex-end;
   letter-spacing: -0.02em;
 }
+
+/* #about_me .cont .right div span {
+  background: linear-gradient(to top, #d3d3d3 50%, transparent 30%);
+} */
 
 #about_me .cont .right em {
   color: rgb(252, 150, 47);
@@ -440,6 +442,7 @@ body {
 .anim_section {
   background-color: #e7e4df;
   height: 66vh;
+  z-index: 12;
 
   .anim_section_wrap {
     padding: 0px 20px 0px 20px;
@@ -633,6 +636,14 @@ scroll-anim-wrapper {
   margin-top: 2.3vw;
 }
 
+.project_desc {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.55;
+  font-family: "nanummyeongjo";
+}
+
 .project1_line {
   width: 34vw;
   height: 1px;
@@ -654,6 +665,10 @@ scroll-anim-wrapper {
   letter-spacing: -0.36px;
   line-height: 22px;
   text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .pj_line_arrow img {
@@ -1200,7 +1215,7 @@ scroll-anim-wrapper {
 
   .footer_inner {
     display: flex;
-    font-size: 10vw;
+    font-size: 9vw;
     white-space: nowrap; /* 텍스트가 한 줄로 나타나도록 설정 */
     animation: crawling-line 20s linear infinite;
 
