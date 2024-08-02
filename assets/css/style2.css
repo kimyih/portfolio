@@ -395,7 +395,8 @@ body {
 } */
 
 #about_me .cont .right em {
-  color: rgb(252, 150, 47);
+  /* color: rgb(252, 150, 47); */
+  color: rgb(245 175 110);
   -webkit-text-stroke-width: 0.3px;
   -webkit-text-stroke-color: #000000;
 }
@@ -641,7 +642,9 @@ scroll-anim-wrapper {
   display: flex;
   flex-direction: column;
   line-height: 1.55;
-  font-family: "nanummyeongjo";
+  font-family: "nanumSquareNeo";
+  letter-spacing: 0.3px;
+  font-weight: 100;
 }
 
 .project1_line {
