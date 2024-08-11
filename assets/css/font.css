@@ -5,6 +5,50 @@
 @import url("https://fastly.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
 @import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+@font-face {
+  font-family: "IropkeBatang";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeoGeoTrial-Black";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../font/NeoGeoTrial-Black.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeoGeoTrial-Light";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../font/NeoGeoTrial-Light.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NeoGeoTrial-Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../font/NeoGeoTrial-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
 @font-face {
   font-family: "S-CoreDream-3Light";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")

@@ -1,0 +1,873 @@
+/* 스크롤바 숨기기 */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+}
+
+#index {
+  background-color: #e7e4df;
+  width: 100%;
+  height: 102vh;
+
+  .top {
+    width: 100%;
+    height: 50vh;
+    background-color: #cccccc4d;
+    overflow: hidden;
+    position: relative;
+
+    span.bo {
+      width: 100%;
+      height: 140px;
+      background-color: #11111131;
+      backdrop-filter: blur(10px);
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    span.to {
+      width: 100%;
+      height: 140px;
+      background-color: #11111131;
+      backdrop-filter: blur(10px);
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 17vw;
+      line-height: 0.8;
+      text-transform: uppercase;
+      font-family: "NeoGeoTrial-Black";
+      color: #111;
+    }
+  }
+
+  .bom {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+
+    .title {
+      width: 100%;
+      border-bottom: 1px solid #000;
+      height: 44px;
+      max-height: 44px;
+      font-family: "Abel";
+      display: flex;
+      align-items: end;
+      font-size: 14px;
+      padding: 1px 5px;
+      z-index: 10000;
+      background-color: #e7e4df;
+      position: sticky;
+      left: 0;
+      top: 0;
+
+      span {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    .cont {
+      width: 100%;
+      height: 46vh;
+      display: flex;
+      border-bottom: 1px solid #000;
+    }
+
+    .left {
+      width: 40%;
+      height: 100%;
+      border-right: 1px solid #000;
+      display: flex;
+      align-items: end;
+      flex-direction: row;
+      font-family: "NeoGeoTrial-Regular";
+      padding: 1%;
+
+      h3 {
+        padding-right: 40px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #222;
+      }
+
+      li {
+        font-size: 14px;
+        line-height: 1.3;
+        color: #666;
+      }
+    }
+
+    .right {
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1%;
+      font-size: 6vw;
+      line-height: 1;
+      font-family: "NeoGeoTrial-Light";
+    }
+  }
+  /* bom */
+}
+/* index */
+
+#index .bom .title span:first-child {
+  text-align: left;
+}
+#index .bom .title span:last-child {
+  text-align: right;
+}
+
+/* //index */
+
+#contens {
+  height: 1100px;
+  background-color: #e7e4df;
+  border-bottom: 1px solid #202020;
+
+  .title {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    height: 44px;
+    font-family: "Abel";
+    display: flex;
+    align-items: end;
+    font-size: 14px;
+    padding: 1px 5px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #e7e4df;
+
+    span {
+      flex: 1;
+      text-align: center;
+    }
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+
+  .about_wrap {
+    background-color: #e7e4df;
+  }
+}
+
+#contens .cont {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+}
+
+#contens .left {
+  width: 30%;
+  height: 100%;
+  /* border-right: 1px solid #000; */
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  font-family: "NeoGeoTrial-Regular";
+  padding: 1%;
+}
+#contens .left h3 {
+  padding-right: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #222;
+}
+#contens .left li {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #666;
+}
+#contens .right {
+  width: 70%;
+  padding: 5% 2%;
+  font-family: "NeoGeoTrial-Light";
+}
+#contens .right > ul {
+}
+#contens .right > ul > li {
+  border-top: 1px solid #000;
+  margin-top: 3px;
+}
+
+#contens .right > ul > li span {
+  margin-top: 30px;
+}
+
+#contens .right > ul > li > ul {
+  text-align: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: -20px;
+}
+
+#contens .right > ul > li > ul > li {
+  border-top: 1px solid #000;
+  padding: 4px 0;
+  color: #888;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    color: #e7e4df;
+    display: flex;
+    align-items: center;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
+  }
+}
+#contens .right > ul > li > ul > li:first-child {
+  border-top: 0;
+}
+
+/* about_info */
+.about_info {
+  width: 100%;
+  height: 50vh;
+  background-color: #e7e4df;
+
+  .about_info_wrap {
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    padding-top: 60px;
+
+    .introduction {
+      display: flex;
+      flex-direction: column;
+
+      .ainfo_1 {
+        font-size: 12vw;
+        color: #202020;
+        line-height: 86%;
+        font-family: "NeoGeoTrial-Light";
+      }
+
+      .ainfo_2 {
+        font-size: 12vw;
+        color: #202020;
+        line-height: 86%;
+        font-family: "NeoGeoTrial-Light";
+      }
+    }
+  }
+}
+
+#intro_text {
+  .ainfo_1 {
+    display: block;
+    font-size: 12vw;
+    color: #202020;
+    line-height: 86%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ainfo_2 {
+    font-size: 12vw;
+    color: #202020;
+    line-height: 86%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 25px;
+  }
+}
+
+.intro-line {
+  position: relative;
+  overflow: hidden;
+  display: block;
+
+  span {
+    font-family: "NeoGeoTrial-Light";
+  }
+}
+
+.intro-line > * {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+/* about_me  */
+
+#about_me {
+  background-color: #e7e4df;
+
+  .title {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    height: 44px;
+    font-family: "Abel";
+    display: flex;
+    align-items: end;
+    font-size: 14px;
+    padding: 1px 5px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #e7e4df;
+
+    span {
+      flex: 1;
+      text-align: center;
+    }
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+
+  .cont {
+    display: flex;
+    align-items: start;
+    border-bottom: 1px solid #000;
+
+    .left {
+      width: 45%;
+      height: 100%;
+      border-right: 1px solid #000;
+    }
+
+    .right {
+      width: 55%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1%;
+      font-size: 6vw;
+      line-height: 0.91;
+      font-family: "NeoGeoTrial-Light";
+
+      span {
+        line-height: 1.05;
+        z-index: 1;
+        font-family: "NeoGeoTrial-Light";
+      }
+
+      div {
+        font-weight: bold;
+        font-size: 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: flex-end;
+        letter-spacing: -0.02em;
+      }
+
+      div:last-child {
+        margin-top: 10px;
+      }
+
+      em {
+        color: rgb(192 207 141);
+      }
+
+      div:nth-child(1),
+      div:nth-child(2) {
+        font-weight: bold;
+        font-size: 8vw;
+        letter-spacing: -0.02em;
+      }
+
+      div:nth-child(3) {
+        font-weight: bold;
+        font-size: 7vw;
+        letter-spacing: -0.02em;
+        border-top: 1px solid #202020;
+        padding-top: 20px;
+        color: rgb(192 207 141);
+      }
+    }
+  }
+}
+
+/* section2 */
+
+#section2 {
+  background-color: #e7e4df;
+
+  .title {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    height: 44px;
+    font-family: "Abel";
+    display: flex;
+    align-items: end;
+    font-size: 14px;
+    padding: 1px 5px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #e7e4df;
+
+    span {
+      flex: 1;
+      text-align: center;
+    }
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+  /* title */
+
+  .cont {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+  }
+
+  .left {
+    width: 30%;
+    height: 100%;
+    /* border-right: 1px solid #000; */
+    display: flex;
+    align-items: end;
+    flex-direction: row;
+    font-family: "NeoGeoTrial-Regular";
+    padding: 1%;
+
+    h3 {
+      padding-right: 40px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 1.3;
+      color: #666;
+    }
+  }
+
+  .right {
+    width: 70%;
+    padding: 5% 2%;
+    font-family: "NeoGeoTrial-Light";
+  }
+}
+
+#section2 .right > ul > li {
+  border-top: 1px solid #000;
+  margin-top: 3px;
+}
+
+#section2 .right > ul > li span {
+  margin-top: 30px;
+}
+
+#section2 .right > ul > li > ul {
+  text-align: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: -20px;
+}
+
+#section2 .right > ul > li > ul > li {
+  border-top: 1px solid #000;
+  padding: 4px 0;
+  color: #888;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    color: #e7e4df;
+    display: flex;
+    align-items: center;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
+  }
+}
+#section2 .right > ul > li > ul > li:first-child {
+  border-top: 0;
+}
+
+/* anim_section */
+
+.anim_section {
+  background-color: #e7e4df;
+  height: 66vh;
+  z-index: 12;
+
+  .anim_section_wrap {
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    padding-top: 60px;
+  }
+}
+
+.anim_section:nth-child(2) {
+  background-color: #e7e4df;
+  height: 55vh;
+  z-index: 12;
+
+  .anim_section_wrap {
+    padding: 0px 20px 0px 20px;
+    width: 100%;
+    padding-top: 50px;
+  }
+}
+
+/* #section3 */
+#section3 .title {
+  width: 100%;
+  border-bottom: 1px solid #000;
+  height: 44px;
+  font-family: "Abel";
+  display: flex;
+  align-items: end;
+  font-size: 14px;
+  padding: 1px 5px;
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  background-color: #e7e4df;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+
+  span:first-child {
+    text-align: left;
+  }
+
+  span:last-child {
+    text-align: right;
+  }
+}
+
+scroll-anim-wrapper {
+  position: relative;
+
+  .overflow-clip {
+    height: 1000vh;
+    overflow: clip;
+  }
+}
+
+.experiment-content-wrapper text {
+  padding: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+/* section4 */
+#section4 {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  /* 여기를 수정 */
+  top: 0;
+  /* 섹션이 상단에 고정될 위치 지정 */
+  z-index: 10;
+  /* 다른 요소들 위에 올라오도록 z-index 조정 */
+  background-color: #e7e4df;
+  border-top: 1px solid #000;
+}
+.work__wrap {
+}
+.work__wrap .work {
+  display: flex;
+  height: 100vh;
+  border-bottom: 1px solid #000;
+}
+.work__wrap .work .left {
+  width: 66.777%;
+  height: 100%;
+  border-right: 1px solid #000;
+  position: relative;
+}
+
+.work__wrap .work .left .text {
+  margin-top: 44px;
+}
+
+.work__wrap .work .left .text h2 {
+  font-size: 10vw;
+  font-family: "NeoGeoTrial-Black";
+  line-height: 0.9;
+  text-transform: uppercase;
+  padding: 20px;
+  border-bottom: 1px solid #000;
+}
+.work__wrap .work .left .text h2 em {
+  display: block;
+  font-size: 9.5vw;
+}
+.work__wrap .work .left .text p {
+  width: 50%;
+  padding: 20px;
+  font-family: "IropkeBatang";
+  word-break: keep-all;
+}
+
+.work__wrap .work .left .text a {
+  display: inline-block;
+  padding-left: 20px;
+  font-family: "NeoGeoTrial-Light";
+  color: #666;
+}
+.work__wrap .work .left .text a:hover {
+  text-decoration: underline;
+}
+.work__wrap .work .left .text a:last-child {
+  padding-left: 0;
+}
+.work__wrap .work .left .skill {
+  position: absolute;
+  right: 10px;
+  top: 70%;
+  font-family: "NeoGeoTrial-Light";
+  text-align: right;
+}
+.work__wrap .work .left .skill em {
+  display: block;
+  margin-bottom: 2px;
+  margin-top: 10px;
+}
+.work__wrap .work .left .skill i {
+  border: 1px solid #000;
+  padding: 4px;
+  display: inline-block;
+}
+.work__wrap .work .left .skill span {
+  display: block;
+}
+
+.work__wrap .work .right {
+  width: 33.333%;
+  background: #ccc;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#section4:nth-child(2) .work__wrap .work .right {
+  background-image: url("https://images.unsplash.com/photo-1577083165633-14ebcdb0f658?q=80&w=2483&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+#section4:nth-child(4) .work__wrap .work .right {
+  background-image: url("https://images.unsplash.com/photo-1584278773680-8d940a213dcf?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+#section4:nth-child(6) .work__wrap .work .right {
+  background-image: url("https://images.unsplash.com/photo-1579783483458-83d02161294e?q=80&w=2794&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+}
+
+.work__wrap .work .right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e2d6c6cb;
+}
+.work__wrap .work .right img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 100;
+  margin-top: 44px;
+}
+
+/* //class_project_wrap */
+
+#class_project_wrap {
+  background-color: #e7e4df;
+
+  .title {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    height: 44px;
+    font-family: "Abel";
+    display: flex;
+    align-items: end;
+    font-size: 14px;
+    padding: 1px 5px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #e7e4df;
+
+    span {
+      flex: 1;
+      text-align: center;
+    }
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:last-child {
+      text-align: right;
+    }
+  }
+}
+
+/* //class_project_info */
+
+#class_project_info {
+  height: 100vh;
+  background-color: #e7e4df;
+  border-bottom: 1px solid #202020;
+
+  .cont {
+    width: 100%;
+    /* height: 50vh; */
+    display: flex;
+  }
+
+  .left {
+    width: 30%;
+    height: 100%;
+    /* border-right: 1px solid #000; */
+    display: flex;
+    align-items: end;
+    flex-direction: row;
+    font-family: "NeoGeoTrial-Regular";
+    padding: 1%;
+
+    h3 {
+      padding-right: 40px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #222;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 1.3;
+      color: #666;
+    }
+  }
+
+  .right {
+    width: 70%;
+    padding: 5% 2%;
+    font-family: "NeoGeoTrial-Light";
+  }
+}
+
+#class_project_info .right > ul {
+}
+#class_project_info .right > ul > li {
+  border-top: 1px solid #000;
+  margin-top: 3px;
+}
+
+#class_project_info .right > ul > li span {
+  margin-top: 30px;
+}
+
+#class_project_info .right > ul > li > ul {
+  text-align: left;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: -20px;
+}
+
+#class_project_info .right > ul > li > ul > li {
+  border-top: 1px solid #000;
+  padding: 4px 0;
+  color: #888;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #202020;
+    color: #e7e4df;
+    display: flex;
+    align-items: center;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
+  }
+}
+#class_project_info .right > ul > li > ul > li:first-child {
+  border-top: 0;
+}
